@@ -1,0 +1,119 @@
+/*
+    TITLE font-family: 'Bebas Neue', cursive;
+    TEXT font-family: 'Montserrat', sans-serif;
+*/
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0 auto;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    background-color: #f5f5ee;
+    text-align: center;
+}
+
+/* HEADER */
+
+#logo1 {
+    display: none;
+    cursor: default;
+}
+
+#logo2 {
+    width: 25%;
+    max-width: 300px;
+    cursor: default;
+ }
+
+.br {
+    display: none;
+}
+
+header {
+    width: 90%;
+    margin: 20px auto 0 auto;
+}
+
+header nav {
+    width: 100%;
+    margin: auto;
+}
+
+header nav .menu {
+    font-size: 1.5em;
+    margin: 0 30px;
+}
+
+header nav ul li {
+    display: inline;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    text-align: center;
+    color: #472d30;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+header nav ul li a:hover {
+    color: #723d46;
+    transition: 0.3s;
+}
+
+hr {
+    border: none;
+    border-bottom: 3px solid #E26d5c;
+    margin-top: 20px;
+    width: 70%;
+}
+
+@media screen and (min-width: 410px) and (max-width: 850px) {
+    #logo1 {
+        display: block;
+        width: 40%;
+        margin : 0 auto 20px auto;
+    }
+    #logo2 {
+        display: none;
+    }
+    header nav .menu {
+        font-size: 1.2em;
+        margin: 0 20px;
+    }
+}
+
+@media screen and (min-width: 290px) and (max-width: 410px){
+    #logo1 {
+        display: block;
+        width: 80%;
+        margin : 0 auto 20px auto;
+    }
+    #logo2 {
+        display: none;
+    }
+    header nav .menu {
+        font-size: 1em;
+        margin: 0 10px;
+    }
+}
+
+@media screen and (max-width: 290px){
+    #logo1 {
+        display: block;
+        width: 90%;
+        margin : 0 auto 10px auto;
+    }
+    #logo2 {
+        display: none;
+    }
+    header nav .menu {
+        font-size: 0.7em;
+        margin: 0 8px;
+    }
+    .br {
+        display: block;
+    }
+}
