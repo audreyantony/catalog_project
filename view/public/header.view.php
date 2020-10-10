@@ -12,13 +12,15 @@
     <title>All-natural Artifacts</title></head>
 <body>
 <header>
+    <a href="./"><img id="logo1" src="img/logo/main-logo-small.png" alt="All-natural Artifacts"/></a>
     <nav>
         <ul>
             <li class="menu"><a href="?page=home">Home</a></li>
-            <li class="menu"><a href="?page=about.us">About us</a></li>
-            <li><a href="./"><img id="logo" src="img/logo/main-logo-small.png" alt="All-natural Artifacts"/></a></li>
+            <li class="menu"><a href="?page=about.us">About us</a></li><br class="br">
+            <li><a href="./"><img id="logo2" src="img/logo/main-logo-small.png" alt="All-natural Artifacts"/></a></li>
             <li class="menu"><a href="?page=catalog">Catalog</a></li>
-            <li class="menu"><a href="?page=contact">Contact</a></li>
+            <li class="menu"><a href="?page=contact">Contact</a></li><br class="br">
         </ul>
     </nav>
+    <hr>
 </header>
