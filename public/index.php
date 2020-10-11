@@ -8,7 +8,7 @@ require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'bin' . DIRECTORY_SEPARATO
 require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'model' . DIRECTORY_SEPARATOR . 'DBconnect.model.php';
 
 // DB CONNEXION
-$db = DBconnect();
+// $db = DBconnect();
 
 if (!isset($_GET['page']) && !isset($_GET['admin'])) {
 
