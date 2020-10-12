@@ -121,14 +121,16 @@ hr {
 /* FOOTER */
 
 footer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
+    background-color: #f5f5ee;
+    height: 30px;
 }
 
 footer div p {
     position: relative;
-    bottom: 10px;
+    top: 10px;
     color: #472d30;
     text-transform: uppercase;
     font-size: 0.8em;
@@ -160,6 +162,377 @@ footer div p a:hover {
 @media screen and (max-width: 290px){
     footer div p {
         font-size: 0.4em;
-        letter-spacing: 0px;
+        letter-spacing: 0;
+    }
+}
+
+/* WELCOME HOME PAGE SECTION */
+
+#welcome {
+    width: 60%;
+    max-width: 700px;
+    max-height: 380px;
+    margin: 40px auto 0 auto;
+    text-align: left;
+    display: inline-block;
+}
+
+#welcome div img {
+    max-width: 70%;
+    max-height: 400px;
+    box-shadow: -190px 32px 0 1px #c9cba3;
+    display: inline;
+}
+
+#welcome #welcome-div {
+    height: 150px;
+    width: 40%;
+    position:absolute;
+    top: 35%;
+    right: 5%;
+    background-color: #472d30;
+}
+
+#welcome #welcome-text {
+    width: 45%;
+    min-height: 260px;
+    background-color: #E26d5c;
+    padding: 40px;
+    float: right;
+    position: relative;
+    bottom: 290px;
+    left: 120px;
+}
+
+#welcome #welcome-text p {
+    font-size: 1.1em;
+    padding-bottom: 5px;
+    color: #472d30;
+    text-align: justify;
+}
+
+#welcome #welcome-text a button {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2em;
+    background-color: #472d30;
+    padding: 10px;
+    border: none;
+    color: #E26d5c;
+    position: absolute;
+    right: 40px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 1650px){
+    #welcome {
+        margin-top: 100px;
+    }
+}
+
+@media screen and (min-width: 1330px) and (max-width: 1650px) {
+    #welcome #welcome-div {
+        width: 20%;
+        right: 12%;
+    }
+    #welcome #welcome-text {
+        bottom: 270px;
+    }
+    #welcome #welcome-text p {
+        font-size: 0.9em;
+        padding-bottom: 10px;
+    }
+    #welcome #welcome-text a button {
+        font-size: 1.1em;
+    }
+}
+
+@media screen and (min-width: 970px) and (max-width: 1330px){
+    #welcome #welcome-div {
+        width: 30%;
+        top: 38%;
+        right: 5%;
+    }
+    #welcome div img {
+        max-width: 80%;
+        box-shadow: -200px 32px 0 1px #c9cba3;
+    }
+    #welcome #welcome-text {
+        width: 55%;
+        min-height: 230px;
+        bottom: 220px;
+    }
+    #welcome #welcome-text p {
+        font-size: 0.9em;
+        padding-bottom: 10px;
+    }
+    #welcome #welcome-text a button {
+        font-size: 1em;
+    }
+}
+
+@media screen and (min-width: 780px) and (max-width: 970px){
+    #welcome #welcome-div {
+        width: 30%;
+        top: 44%;
+        right: 0;
+    }
+    #welcome {
+        width: 70%;
+    }
+    #welcome div img {
+        max-width: 90%;
+    }
+    #welcome #welcome-text {
+        width: 65%;
+        min-height: 180px;
+        bottom: 200px;
+        left: 70px;
+    }
+    #welcome #welcome-text p {
+        font-size: 0.8em;
+    }
+    #welcome #welcome-text a button {
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (min-width: 555px) and (max-width: 780px){
+    #welcome #welcome-div {
+        width: 10%;
+        height: 100px;
+        top: 46%;
+        right: 0;
+    }
+    #welcome {
+        width: 80%;
+    }
+    #welcome div img {
+        max-width: 90%;
+    }
+    #welcome #welcome-text {
+        width: 75%;
+        min-height: 150px;
+        bottom: 180px;
+        left: 50px;
+    }
+    #welcome #welcome-text p {
+        font-size: 0.7em;
+    }
+    #welcome #welcome-text a button {
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (min-width: 10px) and (max-width: 555px){
+    #welcome div img {
+        display: none;
+    }
+    #welcome #welcome-text {
+        width: 100%;
+        min-height: 170px;
+        background-color: #E26d5c;
+        padding: 40px;
+        position: relative;
+        bottom: 0;
+        left: 40px;
+    }
+    #welcome #welcome-text p {
+        font-size: 0.7em;
+        padding-bottom: 10px;
+    }
+    #welcome #welcome-text a button {
+        font-size: 0.8em;
+    }
+}
+
+/* CLEARANCE AND PRODUCT OF THE DAY */
+
+#clearance-potd {
+    width: 70%;
+    margin: 0 auto 50px auto;
+    min-height: 140px;
+    position: relative;
+    bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: space-between;
+}
+
+#clearance-potd .clearance {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    flex: 0 0 auto;
+}
+
+#clearance-potd .potd {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    flex: 0 0 auto;
+}
+
+#clearance-potd .clearance div {
+    width: 130px;
+    height: 220px;
+    flex: 0 0 auto;
+    margin: 10px;
+    position: relative;
+    bottom: 20px;
+}
+#clearance-potd .potd div {
+    width: 50px;
+    height: 50px;
+    flex: 0 0 auto;
+    margin: 10px;
+}
+
+#clearance-potd .potd div:first-child {
+    width: 250px;
+    height: 130px;
+    position: relative;
+    left: 50px;
+    top: 30px;
+    z-index: 1;
+}
+
+#clearance-potd .potd div:last-child {
+    width: 200px;
+    height: 200px;
+    float: right;
+    position: relative;
+    right: 40px;
+    background-image: url("../img/looks/random.jpg");
+    background-size: contain;
+}
+
+.terracotta {
+    background-color: #E26d5c;
+    color: #723d46;
+    border: 2px solid #E26d5c;
+    text-shadow: 1px 1px #E26d5c;
+}
+
+.salmon {
+    background-color: #723d46;
+    color: #E26d5c;
+    border: 2px solid #723d46;
+    text-shadow: 1px 1px #723d46;
+}
+
+.anis {
+    background-color: #c9cba3;
+    color: #472d30;
+    border: 2px solid #c9cba3;
+    text-shadow: 1px 1px #c9cba3;
+}
+
+.burgundy {
+    background-color: #472d30;
+    color: #c9cba3;
+    border: 2px solid #472d30;
+    text-shadow: 1px 1px #472d30;
+}
+
+#clearance-potd .clearance div h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3em;
+    letter-spacing: 2px;
+    position: relative;
+    bottom: 35px;
+    right: 17px;
+}
+
+#clearance-potd .clearance div h4 {
+    position: relative;
+    bottom: 30px;
+}
+
+#clearance-potd .clearance div p {
+    position: relative;
+    bottom: 25px;
+    font-size: 0.7em;
+    padding: 0 10px;
+}
+
+#clearance-potd .clearance div a button {
+    font-family: 'Bebas Neue', sans-serif;
+    padding: 10px;
+    margin-top:-5px;
+    cursor: pointer;
+}
+
+#clearance-potd .potd div h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2em;
+    letter-spacing: 2px;
+    position: relative;
+    bottom: 19px;
+    right: 27px;
+}
+
+#clearance-potd .potd div h4 {
+    position: relative;
+    bottom: 19px;
+    font-size: 0.8em;
+    margin: 0 10px;
+}
+
+#clearance-potd .potd div p {
+    position: relative;
+    bottom: 19px;
+    font-size: 0.7em;
+    margin: 0 10px -15px 10px;
+}
+
+#clearance-potd .potd div a button {
+    font-family: 'Bebas Neue', sans-serif;
+    padding: 5px 10px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 1080px) and (max-width: 1370px){
+    #clearance-potd {
+        width: 90%;
+        bottom: 10px;
+    }
+}
+
+@media screen and (min-width: 550px) and (max-width: 1080px){
+    #clearance-potd {
+        transform: scale(0.9);
+        width: 95%;
+        bottom: 0;
+    }
+}
+
+@media screen and (min-width: 420px) and (max-width: 550px){
+    #clearance-potd {
+        transform: scale(0.7);
+        width: 100%;
+        margin: 0 auto;
+        top :20px;
+    }
+}
+
+@media screen and (min-width: 10px) and (max-width: 420px){
+    #clearance-potd {
+        transform: scale(0.6);
+        width: 100%;
+        margin: 0 auto;
+        top :0;
+        right: 20px;
+    }
+    #clearance-potd .potd {
+        transform: scale(1.3);
+        position: relative;
+        right: 30px;
     }
 }

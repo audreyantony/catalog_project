@@ -10,7 +10,7 @@ require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'model' . DIRECTORY_SEPARA
 // DB CONNEXION
 $db = DBconnect();
 
-if (!isset($_GET['page']) && !isset($_GET['admin'])) {
+if (!isset($_GET['page']) && !isset($_GET['admin']) && !isset($_GET['product'])) {
 
     require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'view' . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . 'header.view.php';
 
@@ -57,5 +57,16 @@ if (!isset($_GET['page']) && !isset($_GET['admin'])) {
             default :
                 include dirname(__DIR__) . DIRECTORY_SEPARATOR . 'controller' . DIRECTORY_SEPARATOR . 'user' . DIRECTORY_SEPARATOR . '404.user.controller.php';
         }
+
+    } else if(isset($_GET['product']) && ctype_digit($_GET['product'])){
+
+        $pageId = (int) $_GET['product'];
+
+        require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'view' . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . 'header.view.php';
+
+        include dirname(__DIR__) . DIRECTORY_SEPARATOR . 'controller' . DIRECTORY_SEPARATOR . 'user' . DIRECTORY_SEPARATOR . 'product.user.controller.php';
+
+        require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'view' . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . 'footer.view.php';
+
     }
 }
