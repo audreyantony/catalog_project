@@ -10,3 +10,20 @@
         <a href="?page=catalog"><button>Catalog ►</button></a>
     </div>
 </section>
+
+<section id="clearance-potd">
+    <div class="clearance">
+        <div class="burgundy">
+            <h3>Pourcentage</h3>
+        </div>
+        <div class="terracotta"></div>
+        <div class="anis"></div>
+    </div>
+    <div class="potd">
+        <div class="burgundy">
+
+        </div>
+        <div>
+        </div>
+    </div>
+</section>
