@@ -168,6 +168,8 @@ footer div p a:hover {
 
 #welcome {
     width: 60%;
+    max-width: 700px;
+    max-height: 690px;
     margin: 40px auto 0 auto;
     text-align: left;
     display: inline-block;
@@ -178,6 +180,15 @@ footer div p a:hover {
     max-height: 400px;
     box-shadow: -190px 32px 0 1px #c9cba3;
     display: inline;
+}
+
+#welcome #welcome-div {
+    height: 150px;
+    width: 40%;
+    position:absolute;
+    top: 35%;
+    right: 5%;
+    background-color: #472d30;
 }
 
 #welcome #welcome-text {
@@ -211,11 +222,15 @@ footer div p a:hover {
 }
 
 @media screen and (min-width: 1330px) and (max-width: 1650px) {
+    #welcome #welcome-div {
+        width: 20%;
+        right: 12%;
+    }
     #welcome #welcome-text {
         bottom: 270px;
     }
     #welcome #welcome-text p {
-        font-size: 1.1em;
+        font-size: 1em;
         padding-bottom: 10px;
     }
     #welcome #welcome-text a button {
@@ -224,6 +239,11 @@ footer div p a:hover {
 }
 
 @media screen and (min-width: 970px) and (max-width: 1330px){
+    #welcome #welcome-div {
+        width: 30%;
+        top: 38%;
+        right: 5%;
+    }
     #welcome div img {
         max-width: 80%;
         box-shadow: -200px 32px 0 1px #c9cba3;
@@ -243,6 +263,11 @@ footer div p a:hover {
 }
 
 @media screen and (min-width: 780px) and (max-width: 970px){
+    #welcome #welcome-div {
+        width: 30%;
+        top: 44%;
+        right: 0;
+    }
     #welcome {
         width: 70%;
     }
@@ -253,6 +278,7 @@ footer div p a:hover {
         width: 65%;
         min-height: 180px;
         bottom: 200px;
+        left: 70px;
     }
     #welcome #welcome-text p {
         font-size: 0.8em;
@@ -263,6 +289,12 @@ footer div p a:hover {
 }
 
 @media screen and (min-width: 555px) and (max-width: 780px){
+    #welcome #welcome-div {
+        width: 10%;
+        height: 100px;
+        top: 46%;
+        right: 0;
+    }
     #welcome {
         width: 80%;
     }
@@ -272,8 +304,8 @@ footer div p a:hover {
     #welcome #welcome-text {
         width: 75%;
         min-height: 150px;
-        bottom: 190px;
-        left: 70px;
+        bottom: 180px;
+        left: 50px;
     }
     #welcome #welcome-text p {
         font-size: 0.7em;
