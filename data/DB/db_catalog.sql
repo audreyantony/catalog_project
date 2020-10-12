@@ -1,5 +1,5 @@
 -- MySQL Workbench Synchronization
--- Generated: 2020-10-09 12:06
+-- Generated: 2020-10-12 11:51
 -- Model: New Model
 -- Version: 1.0
 -- Project: Name of the project
@@ -30,15 +30,8 @@ CREATE TABLE IF NOT EXISTS `catalog_project`.`product` (
   `discount_product` TINYINT(3) UNSIGNED NULL DEFAULT NULL,
   `promoted_product` TINYINT(3) UNSIGNED NULL DEFAULT NULL,
   `instock_product` TINYINT(3) UNSIGNED NULL DEFAULT NULL,
-  `id_category_product` INT(10) UNSIGNED NOT NULL,
-  PRIMARY KEY (`id_product`, `id_category_product`),
-  UNIQUE INDEX `name_product_UNIQUE` (`name_product` ASC) VISIBLE,
-  INDEX `fk_product_category_idx` (`id_category_product` ASC) VISIBLE,
-  CONSTRAINT `fk_product_category`
-    FOREIGN KEY (`id_category_product`)
-    REFERENCES `catalog_project`.`category` (`id_category`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`id_product`),
+  UNIQUE INDEX `name_product_UNIQUE` (`name_product` ASC) VISIBLE)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
@@ -80,6 +73,25 @@ CREATE TABLE IF NOT EXISTS `catalog_project`.`product_has_img` (
   CONSTRAINT `fk_product_has_img_img1`
     FOREIGN KEY (`img_id_product_has_img`)
     REFERENCES `catalog_project`.`img` (`id_img`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+CREATE TABLE IF NOT EXISTS `catalog_project`.`product_has_category` (
+  `product_id_product` INT(10) UNSIGNED NOT NULL,
+  `category_id_category` INT(10) UNSIGNED NOT NULL,
+  PRIMARY KEY (`product_id_product`, `category_id_category`),
+  INDEX `fk_product_has_category_category1_idx` (`category_id_category` ASC) VISIBLE,
+  INDEX `fk_product_has_category_product1_idx` (`product_id_product` ASC) VISIBLE,
+  CONSTRAINT `fk_product_has_category_product1`
+    FOREIGN KEY (`product_id_product`)
+    REFERENCES `catalog_project`.`product` (`id_product`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_product_has_category_category1`
+    FOREIGN KEY (`category_id_category`)
+    REFERENCES `catalog_project`.`category` (`id_category`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
