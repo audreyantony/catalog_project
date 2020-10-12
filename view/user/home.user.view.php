@@ -14,16 +14,31 @@
 <section id="clearance-potd">
     <div class="clearance">
         <div class="burgundy">
-            <h3>Pourcentage</h3>
+            <h3><?=$C1['discount']?> %</h3>
+            <h4><?=$C1['name']?> ...</h4>
+            <p><?=$C1['descr']?> ...</p>
+            <a href="?product=<?=$C1['id_product']?>"><button class="anis">Read more</button></a>
         </div>
-        <div class="terracotta"></div>
-        <div class="anis"></div>
+        <div class="terracotta">
+            <h3><?=$C2['discount']?> %</h3>
+            <h4><?=$C2['name']?> ...</h4>
+            <p><?=$C2['descr']?> ...</p>
+            <a href="?product=<?=$C2['id_product']?>"><button class="salmon">Read more</button></a>
+        </div>
+        <div class="anis">
+            <h3><?=$C3['discount']?> %</h3>
+            <h4><?=$C3['name']?> ...</h4>
+            <p><?=$C3['descr']?> ...</p>
+            <a href="?product=<?=$C3['id_product']?>"><button class="burgundy">Read more</button></a>
+        </div>
     </div>
     <div class="potd">
         <div class="burgundy">
-
+            <h3>Today's Pick :</h3>
+            <h4><?=$POTD['name']?></h4>
+            <p><?=$POTD['descr']?> ...</p>
+            <a href="?product=<?=$POTD['id_product']?>"><button class="anis">Read more</button></a>
         </div>
-        <div>
-        </div>
+        <div></div>
     </div>
 </section>
