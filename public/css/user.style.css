@@ -536,3 +536,208 @@ footer div p a:hover {
         right: 30px;
     }
 }
+
+/* ABOUT US PAGE */
+
+#au {
+    margin: 50px auto;
+    width: 100%;
+}
+
+#au .au-img1 {
+    width: 300px;
+    height: 350px;
+    background-image: url("../img/looks/bathroom.jpg");
+    background-size: cover;
+    position: absolute;
+    left: 15%;
+    top: 600px;
+}
+
+#au .au-img2 {
+    width: 30%;
+    height: 280px;
+    background-color: #E26d5c;
+    position: absolute;
+    left: 10%;
+    top: 250px;
+}
+
+#au .au-img3 {
+    width: 250px;
+    height: 300px;
+    background-image: url("../img/looks/all-purpose.jpg");
+    background-size: cover;
+    position: absolute;
+    right: 15%;
+    top: 250px;
+}
+
+#au .au-img4 {
+    width: 35%;
+    height: 210px;
+    background-color: #c9cba3;
+    position: absolute;
+    right: 12%;
+    top: 580px;
+}
+
+#au .au-img5 {
+    width: 35%;
+    height: 210px;
+    position: absolute;
+    right: 12%;
+    top: 780px;
+}
+
+#au .au-text {
+    width: 50%;
+    padding: 4%;
+    position: absolute;
+    top: 280px;
+    left: 21%;
+    background-color: #472d30;
+    color: #E26d5c;
+    text-align: right;
+}
+
+#au .au-text h3 {
+    font-size: 4em;
+    font-family: 'Bebas Neue', sans-serif;
+    position: relative;
+    bottom: 95px;
+    text-shadow: 1px 1px #472d30;
+}
+
+#au .au-text p {
+    font-size: 0.9em;
+    position: relative;
+    bottom: 55px;
+    text-align: justify;
+}
+
+#au .au-text a button {
+    font-family: 'Bebas Neue', sans-serif;
+    background-color: #E26d5c;
+    border: none;
+    font-size: 1.2em;
+    color: #472d30;
+    padding: 10px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+@media screen and (min-width: 860px) and (max-width: 970px){
+    #au {
+        margin: 40px auto;
+    }
+    #au .au-text {
+        width: 60%;
+        top: 220px;
+        left: 16%;
+    }
+    #au .au-img3 {
+        right: 5%;
+        top: 230px;
+    }
+    #au .au-img1 {
+        left: 5%;
+        top: 500px;
+    }
+    #au .au-img4 {
+        right: 8%;
+        top: 600px;
+    }
+    #au .au-text h3 {
+        font-size: 3.5em;
+        bottom: 65px;
+    }
+}
+
+@media screen and (min-width: 60px) and (max-width: 860px){
+    #au {
+        margin: 40px auto;
+    }
+    #au .au-text {
+        width: 60%;
+        top: 220px;
+        left: 16%;
+    }
+    #au .au-img3 {
+        right: 5%;
+        top: 230px;
+    }
+    #au .au-img1 {
+        left: 5%;
+        top: 500px;
+    }
+    #au .au-img4 {
+        right: 8%;
+        top: 600px;
+    }
+    #au .au-img5 {
+        top: 900px;
+    }
+    #au .au-text h3 {
+        font-size: 3.5em;
+        bottom: 65px;
+    }
+}
+
+@media screen and (min-width: 250px) and (max-width: 500px){
+    #au {
+        margin: 40px auto;
+    }
+    #au .au-text {
+        width: 90%;
+        top: 240px;
+        left: 1%;
+    }
+    #au .au-img3 {
+        display: none;
+    }
+    #au .au-img1 {
+        display: none;
+    }
+    #au .au-img4 {
+        display: none;
+    }
+    #au .au-img5 {
+        top: 700px;
+    }
+    #au .au-text h3 {
+        font-size: 3em;
+        bottom: 55px;
+    }
+}
+
+@media screen and (min-width: 10px) and (max-width: 250px){
+    #au {
+        margin: 40px auto;
+    }
+    #au .au-text {
+        width: 90%;
+        top: 240px;
+        left: 1%;
+    }
+    #au .au-text p {
+        font-size: 0.7em;
+        bottom: 35px;
+    }
+    #au .au-img3 {
+        display: none;
+    }
+    #au .au-img1 {
+        display: none;
+    }
+    #au .au-img4 {
+        display: none;
+    }
+    #au .au-img5 {
+        top: 800px;
+    }
+    #au .au-text h3 {
+        font-size: 2.5em;
+        bottom: 35px;
+    }
+}
