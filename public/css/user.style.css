@@ -585,7 +585,6 @@ footer div p a:hover {
 #au .au-img5 {
     width: 35%;
     height: 210px;
-    background-color: #c9cba3;
     position: absolute;
     right: 12%;
     top: 780px;
@@ -626,4 +625,119 @@ footer div p a:hover {
     padding: 10px;
     cursor: pointer;
     margin-bottom: 20px;
+}
+
+@media screen and (min-width: 860px) and (max-width: 970px){
+    #au {
+        margin: 40px auto;
+    }
+    #au .au-text {
+        width: 60%;
+        top: 220px;
+        left: 16%;
+    }
+    #au .au-img3 {
+        right: 5%;
+        top: 230px;
+    }
+    #au .au-img1 {
+        left: 5%;
+        top: 500px;
+    }
+    #au .au-img4 {
+        right: 8%;
+        top: 600px;
+    }
+    #au .au-text h3 {
+        font-size: 3.5em;
+        bottom: 65px;
+    }
+}
+
+@media screen and (min-width: 60px) and (max-width: 860px){
+    #au {
+        margin: 40px auto;
+    }
+    #au .au-text {
+        width: 60%;
+        top: 220px;
+        left: 16%;
+    }
+    #au .au-img3 {
+        right: 5%;
+        top: 230px;
+    }
+    #au .au-img1 {
+        left: 5%;
+        top: 500px;
+    }
+    #au .au-img4 {
+        right: 8%;
+        top: 600px;
+    }
+    #au .au-img5 {
+        top: 900px;
+    }
+    #au .au-text h3 {
+        font-size: 3.5em;
+        bottom: 65px;
+    }
+}
+
+@media screen and (min-width: 250px) and (max-width: 500px){
+    #au {
+        margin: 40px auto;
+    }
+    #au .au-text {
+        width: 90%;
+        top: 240px;
+        left: 1%;
+    }
+    #au .au-img3 {
+        display: none;
+    }
+    #au .au-img1 {
+        display: none;
+    }
+    #au .au-img4 {
+        display: none;
+    }
+    #au .au-img5 {
+        top: 700px;
+    }
+    #au .au-text h3 {
+        font-size: 3em;
+        bottom: 55px;
+    }
+}
+
+@media screen and (min-width: 10px) and (max-width: 250px){
+    #au {
+        margin: 40px auto;
+    }
+    #au .au-text {
+        width: 90%;
+        top: 240px;
+        left: 1%;
+    }
+    #au .au-text p {
+        font-size: 0.7em;
+        bottom: 35px;
+    }
+    #au .au-img3 {
+        display: none;
+    }
+    #au .au-img1 {
+        display: none;
+    }
+    #au .au-img4 {
+        display: none;
+    }
+    #au .au-img5 {
+        top: 800px;
+    }
+    #au .au-text h3 {
+        font-size: 2.5em;
+        bottom: 35px;
+    }
 }
