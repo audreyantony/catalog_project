@@ -582,12 +582,21 @@ footer div p a:hover {
     top: 580px;
 }
 
+#au .au-img5 {
+    width: 35%;
+    height: 210px;
+    background-color: #c9cba3;
+    position: absolute;
+    right: 12%;
+    top: 780px;
+}
+
 #au .au-text {
-    width: 40%;
+    width: 50%;
     padding: 4%;
     position: absolute;
     top: 280px;
-    left: 26%;
+    left: 21%;
     background-color: #472d30;
     color: #E26d5c;
     text-align: right;
@@ -616,4 +625,5 @@ footer div p a:hover {
     color: #472d30;
     padding: 10px;
     cursor: pointer;
+    margin-bottom: 20px;
 }
