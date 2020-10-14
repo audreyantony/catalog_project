@@ -741,3 +741,21 @@ footer div p a:hover {
         bottom: 35px;
     }
 }
+
+/* CONTACT PAGE */
+
+#social-media a img {
+    width: 40px;
+    margin: 10px;
+}
+
+#social-media a img:hover {
+    width: 48px;
+    margin: 6px;
+}
+
+#contact .img {
+    width: 30%;
+    height: 250px;
+    background-image: url("img/");
+}

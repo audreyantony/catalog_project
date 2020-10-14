@@ -15,7 +15,10 @@
 </section>
 
 <section id="social-media">
-
+    <a href="https://fr-fr.facebook.com/" target="_blank"><img src="img/social-media/facebook.png" alt="facebook"></a>
+    <a href="https://www.instagram.com/" target="_blank"><img src="img/social-media/instagram.png" alt="instagram"></a>
+    <a href="https://www.pinterest.fr/" target="_blank"><img src="img/social-media/pinterest.png" alt="pinterest"></a>
+    <a href="https://www.youtube.com/" target="_blank"><img src="img/social-media/youtube.png" alt="youtube"></a>
 </section>
 
 <section id="map">
