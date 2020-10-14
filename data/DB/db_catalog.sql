@@ -22,18 +22,20 @@ CREATE TABLE IF NOT EXISTS `catalog_project`.`user` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
-CREATE TABLE IF NOT EXISTS `catalog_project`.`product` (
-  `id_product` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `name_product` VARCHAR(100) NOT NULL,
-  `description_product` TINYTEXT NOT NULL,
-  `price_product` DECIMAL(7,2) NOT NULL,
-  `discount_product` TINYINT(3) UNSIGNED NULL DEFAULT NULL,
-  `promoted_product` TINYINT(3) UNSIGNED NULL DEFAULT NULL,
-  `instock_product` TINYINT(3) UNSIGNED NULL DEFAULT NULL,
+CREATE TABLE IF NOT EXISTS `product` (
+  `id_product` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name_product` varchar(100) NOT NULL,
+  `description_product` tinytext NOT NULL,
+  `price_product` decimal(7,2) NOT NULL,
+  `discount_product` tinyint(3) UNSIGNED DEFAULT NULL,
+  `discount_end_date_product` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `promoted_product` tinyint(3) UNSIGNED DEFAULT NULL,
+  `instock_product` tinyint(3) UNSIGNED DEFAULT NULL,
   PRIMARY KEY (`id_product`),
-  UNIQUE INDEX `name_product_UNIQUE` (`name_product` ASC) VISIBLE)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+  UNIQUE KEY `name_product_UNIQUE` (`name_product`)
+) 
+ENGINE=InnoDB 
+DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `catalog_project`.`img` (
   `id_img` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -43,14 +45,18 @@ CREATE TABLE IF NOT EXISTS `catalog_project`.`img` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
-CREATE TABLE IF NOT EXISTS `catalog_project`.`shop` (
-  `id_shop` INT(11) NOT NULL,
-  `name_shop` VARCHAR(40) NOT NULL,
-  `localisation_shop` VARCHAR(80) NOT NULL,
-  `description_shop` TINYTEXT NOT NULL,
-  PRIMARY KEY (`id_shop`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+CREATE TABLE IF NOT EXISTS `shop` (
+  `id_shop` int(11) NOT NULL,
+  `name_shop` varchar(40) NOT NULL,
+  `localisation_shop` varchar(80) NOT NULL,
+  `street_shop` varchar(180) NOT NULL,
+  `post_code_shop` varchar(5) NOT NULL,
+  `city_shop` varchar(60) NOT NULL,
+  `description_shop` tinytext NOT NULL,
+  PRIMARY KEY (`id_shop`)
+) 
+ENGINE=InnoDB DEFAULT 
+CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `catalog_project`.`category` (
   `id_category` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
