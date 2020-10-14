@@ -46,7 +46,7 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
 CREATE TABLE IF NOT EXISTS `shop` (
-  `id_shop` int(11) NOT NULL,
+  `id_shop` int(11) NOT NULL AUTO_INCREMENT,
   `name_shop` varchar(40) NOT NULL,
   `localisation_shop` varchar(80) NOT NULL,
   `street_shop` varchar(180) NOT NULL,
