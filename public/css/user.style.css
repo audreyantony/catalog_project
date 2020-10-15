@@ -195,7 +195,7 @@ footer div p a:hover {
 
 #welcome #welcome-text {
     width: 45%;
-    min-height: 260px;
+    min-height: 280px;
     background-color: #E26d5c;
     padding: 40px;
     float: right;
@@ -227,6 +227,9 @@ footer div p a:hover {
 @media screen and (min-width: 1650px){
     #welcome {
         margin-top: 100px;
+    }
+    #welcome #welcome-text {
+        min-height: 350px;
     }
 }
 
@@ -350,16 +353,17 @@ footer div p a:hover {
 
 #clearance-potd {
     width: 70%;
-    margin: 0 auto 50px auto;
+    margin: 50px auto 50px auto;
     min-height: 140px;
     position: relative;
-    bottom: 30px;
+    bottom: 10px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     align-content: space-between;
+    transform: scale(1.1);
 }
 
 #clearance-potd .clearance {
