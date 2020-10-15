@@ -1,10 +1,16 @@
-var map = L.map('leaflet-map').setView([51.505, -0.09], 13);
+let map = L.map('leaflet-map').setView([48.8566969, 2.3514616], 11);
 
-L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
-    id: 'mapbox/streets-v11',
-    tileSize: 512,
-    zoomOffset: -1,
-    accessToken: 'your.mapbox.access.token'
-}).addTo(mymap);
+L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png', {
+    maxZoom: 17,
+    attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+
+let shop3 = L.marker([48.815, 2.319]).addTo(map);
+shop3.bindPopup("<p> ANA Montrouge <br> 01.98.76.54.32</p>").openPopup();
+
+let shop1 = L.marker([48.84, 2.33]).addTo(map);
+shop1.bindPopup("<p> ANA Raspail <br> 01.23.45.67.89</p>").openPopup();
+
+let shop2 = L.marker([48.87, 2.31]).addTo(map);
+shop2.bindPopup("<p> ANA Champs Élysées <br> 01.29.38.47.56</p>").openPopup();

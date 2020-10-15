@@ -750,11 +750,13 @@ footer div p a:hover {
     position: relative;
     top: 550px;
     right: 25%;
+    transition: 0.2s;
 }
 
 #social-media a img:hover {
     width: 48px;
     margin: 6px;
+    transition: 0.2s;
 }
 
 #contact .img {
@@ -847,25 +849,56 @@ footer div p a:hover {
     background-color: #E26d5c;
 }
 
-#map .shop-map {
-    width: 320px;
-    height: 320px;
-    background-color: #723d46;
+#contact .inputs form span {
     position: absolute;
-    top: 640px;
-    right: 16%;
+    bottom: 90px;
+    left: 5px;
+    color: #E26d5c;
 }
 
 #map .list-shop {
     width: 22%;
-    height: 220px;
-    background-color: #c9cba3;
+    min-height: 220px;
+    background-color: #E26d5c;
     position: absolute;
-    top: 690px;
-    right: 35%;
+    top: 650px;
+    right: 560px;
+    color: #472d30;
+}
+
+#map .list-shop h4 {
+    font-size: 3em;
+    font-family: 'Bebas Neue', sans-serif;
+    text-shadow: 1px 1px #E26d5c;
+    position: relative;
+    bottom: 35px;
+    right: 55px;
+}
+
+#map .list-shop .shop {
+    background-color: #E26d5c;
+    padding: 10px 20px;
+    margin-bottom: -15px;
+    position: relative;
+    bottom: 30px;
+    text-align: left;
+    font-size: 0.8em;
+}
+
+#map .list-shop .shop h5 {
+    text-transform: uppercase;
+    font-weight: lighter;
+    font-size: 1.2em;
 }
 
 #map .shop-map {
-    width: 320px;
+    width: 370px;
+    height: 370px;
+    position: absolute;
+    top: 620px;
+    right: 200px;
+}
+
+#map .shop-map #leaflet-map {
     height: 320px;
 }

@@ -6,10 +6,15 @@
     <div class="inputs">
         <h3>Contact</h3>
         <form action="" method="post">
-            <input class="form1" name="name" type="text" placeholder="Your name" required>
-            <input class="form2" name="message" type="email" placeholder="Your email address" required>
-            <textarea class="form3" name="message" placeholder="Your comment or message" required></textarea>
-            <input class="form4" type="submit" value="Send ►">
+            <?php
+            if (isset($warning)){
+                echo "<span>".$warning."</span>";
+            }
+            ?>
+            <input class="form1" name="name" type="text" placeholder="Your name" value="<?=$nameEntry?>" >
+            <input  class="form2" name="mail" type="email" placeholder="Your email address" value="<?=$mailEntry?>" required>
+            <textarea class="form3" name="message" placeholder="Your comment or message" required><?=$messageEntry?></textarea>
+            <input class="form4" name="sendForm" type="submit" value="Send ►">
         </form>
         <h4></h4>
     </div>
@@ -23,8 +28,18 @@
 </section>
 
 <section id="map">
-    <div class="shop-map"></div>
     <div class="list-shop">
+        <h4>Shops</h4>
+        <div class="shop">
+        <?php
+        while ($shop = mysqli_fetch_assoc($shops)){
+            echo "<h5>".$shop['name_shop']."</h5>";
+            echo "<p>".$shop['street_shop'].", ".$shop['city_shop'].".<br> Contact : ".$shop['description_shop']."</p><hr>";
+        }
+        ?>
+        </div>
+    </div>
+    <div class="shop-map">
         <div id="leaflet-map">
         </div>
     </div>
