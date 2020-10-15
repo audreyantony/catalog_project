@@ -741,3 +741,284 @@ footer div p a:hover {
         bottom: 35px;
     }
 }
+
+/* CONTACT PAGE */
+
+#social-media a img {
+    width: 40px;
+    margin: 10px;
+    position: relative;
+    top: 550px;
+    right: 25%;
+    transition: 0.2s;
+}
+
+#social-media a img:hover {
+    width: 48px;
+    margin: 6px;
+    transition: 0.2s;
+}
+
+#contact .img {
+    width: 40%;
+    max-width: 450px;
+    height: 350px;
+    background-image: url("../img/looks/shop.png");
+    background-size: cover;
+    position: absolute;
+    top: 250px;
+    left: 12%;
+    box-shadow: -115px 25px 0 #c9cba3;
+}
+
+#contact .inputs {
+    width: 45%;
+    max-height: 200px;
+    background-color: #472d30;
+    color: #E26d5c;
+    position: absolute;
+    top: 290px;
+    right: 12%;
+    padding: 40px;
+}
+
+#contact .inputs h3 {
+    font-size: 4em;
+    font-family: 'Bebas Neue', sans-serif;
+    position: relative;
+    bottom: 75px;
+    left: 180px;
+    text-shadow: 1px 1px #472d30;
+}
+
+#contact .inputs form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    color: #472d30;
+    position: relative;
+    bottom: 55px;
+}
+
+#contact .inputs form input {
+    width: 90%;
+    padding: 10px;
+    height: 25px;
+    color: #472d30;
+    border: none;
+    background-color: #f5f5ee;
+}
+
+#contact .inputs form textarea {
+    width: 90%;
+    max-width: 350px;
+    padding: 10px;
+    height: 90px;
+    max-height: 90px;
+    color: #472d30;
+    border: none;
+    background-color: #f5f5ee;
+}
+
+#contact .inputs form .form1 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+#contact .inputs form .form2 {
+    grid-area: 2 / 1 / 3 / 2;
+    position: relative;
+    bottom: 65px;
+}
+
+#contact .inputs form .form3 {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+#contact .inputs form .form4 {
+    grid-area: 2 / 2 / 3 / 3;
+    width: 40%;
+    height: 35px;
+    padding: 5px;
+    position: relative;
+    left: 18%;
+}
+
+#contact .inputs form .form4:hover {
+    background-color: #E26d5c;
+}
+
+#contact .inputs form span {
+    position: absolute;
+    bottom: 90px;
+    left: 5px;
+    color: #E26d5c;
+}
+
+#map .list-shop {
+    width: 22%;
+    min-height: 220px;
+    background-color: #E26d5c;
+    position: absolute;
+    top: 650px;
+    right: 560px;
+    color: #472d30;
+}
+
+#map .list-shop h4 {
+    font-size: 3em;
+    font-family: 'Bebas Neue', sans-serif;
+    text-shadow: 1px 1px #E26d5c;
+    position: relative;
+    bottom: 35px;
+    right: 55px;
+}
+
+#map .list-shop .shop {
+    background-color: #E26d5c;
+    padding: 10px 20px;
+    margin-bottom: -15px;
+    position: relative;
+    bottom: 30px;
+    text-align: left;
+    font-size: 0.8em;
+}
+
+#map .list-shop .shop h5 {
+    text-transform: uppercase;
+    font-weight: lighter;
+    font-size: 1.2em;
+}
+
+#map .shop-map {
+    width: 370px;
+    height: 370px;
+    position: absolute;
+    top: 620px;
+    right: 200px;
+}
+
+#map .shop-map #leaflet-map {
+    height: 320px;
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1400px){
+    #social-media a img {
+        right: 30%;
+    }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1200px){
+    #social-media a img {
+        right: 37%;
+    }
+    #contact .inputs {
+        width: 65%;
+    }
+    #map .list-shop {
+        width: 32%;
+        right: 420px;
+    }
+    #map .shop-map {
+        right: 80px;
+    }
+}
+
+@media screen and (min-width: 850px) and (max-width: 1000px){
+    #social-media a img {
+        right: -22%;
+        top: 790px;
+        padding-bottom: 50px;
+    }
+    #contact .inputs {
+        width: 65%;
+        top: 240px;
+    }
+    #map .list-shop {
+        width: 42%;
+        right: 435px;
+        top: 590px;
+    }
+    #map .shop-map {
+        right: 80px;
+        top: 560px;
+    }
+    #contact .img {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 550px) and (max-width: 850px){
+    #social-media a img {
+        right: -22%;
+        top: 740px;
+        padding-bottom: 50px;
+    }
+    #contact .inputs {
+        width: 65%;
+        top: 240px;
+    }
+    #map .list-shop {
+        width: 42%;
+        left: 10px;
+        top: 590px;
+    }
+    #map .shop-map {
+        right: 10px;
+        top: 560px;
+        width: 56%;
+    }
+    #contact .img {
+        display: none;
+    }
+    #contact .inputs h3 {
+        left: 130px;
+    }
+}
+
+@media screen and (min-width: 10px) and (max-width: 550px){
+    #social-media a img {
+        right: 0;
+        top: 1180px;
+        padding-bottom: 50px;
+    }
+    #contact .inputs {
+        width: 80%;
+        right: 1%;
+        top: 240px;
+        max-height: 250px;
+    }
+    #map .list-shop {
+        width: 100%;
+        left: 0;
+        top: 950px;
+        padding-bottom: 50px;
+    }
+    #map .shop-map {
+        right: 0;
+        top: 650px;
+        width: 100%;
+        z-index: -1;
+    }
+    #contact .img {
+        display: none;
+    }
+    #contact .inputs h3 {
+        left: 20%;
+        font-size: 3em;
+    }
+    #contact .inputs form textarea {
+        height: 180px;
+        max-height: 180px;
+    }
+    #map .list-shop h4 {
+        right: 30%;
+    }
+    #contact .inputs form .form2 {
+        bottom: 155px;
+    }
+    #contact .inputs form .form4 {
+        width: 60%;
+    }
+}
