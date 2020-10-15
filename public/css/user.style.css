@@ -902,3 +902,123 @@ footer div p a:hover {
 #map .shop-map #leaflet-map {
     height: 320px;
 }
+
+@media screen and (min-width: 1200px) and (max-width: 1400px){
+    #social-media a img {
+        right: 30%;
+    }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1200px){
+    #social-media a img {
+        right: 37%;
+    }
+    #contact .inputs {
+        width: 65%;
+    }
+    #map .list-shop {
+        width: 32%;
+        right: 420px;
+    }
+    #map .shop-map {
+        right: 80px;
+    }
+}
+
+@media screen and (min-width: 850px) and (max-width: 1000px){
+    #social-media a img {
+        right: -22%;
+        top: 790px;
+        padding-bottom: 50px;
+    }
+    #contact .inputs {
+        width: 65%;
+        top: 240px;
+    }
+    #map .list-shop {
+        width: 42%;
+        right: 435px;
+        top: 590px;
+    }
+    #map .shop-map {
+        right: 80px;
+        top: 560px;
+    }
+    #contact .img {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 550px) and (max-width: 850px){
+    #social-media a img {
+        right: -22%;
+        top: 740px;
+        padding-bottom: 50px;
+    }
+    #contact .inputs {
+        width: 65%;
+        top: 240px;
+    }
+    #map .list-shop {
+        width: 42%;
+        left: 10px;
+        top: 590px;
+    }
+    #map .shop-map {
+        right: 10px;
+        top: 560px;
+        width: 56%;
+    }
+    #contact .img {
+        display: none;
+    }
+    #contact .inputs h3 {
+        left: 130px;
+    }
+}
+
+@media screen and (min-width: 10px) and (max-width: 550px){
+    #social-media a img {
+        right: 0;
+        top: 1180px;
+        padding-bottom: 50px;
+    }
+    #contact .inputs {
+        width: 80%;
+        right: 1%;
+        top: 240px;
+        max-height: 250px;
+    }
+    #map .list-shop {
+        width: 100%;
+        left: 0;
+        top: 950px;
+        padding-bottom: 50px;
+    }
+    #map .shop-map {
+        right: 0;
+        top: 650px;
+        width: 100%;
+        z-index: -1;
+    }
+    #contact .img {
+        display: none;
+    }
+    #contact .inputs h3 {
+        left: 20%;
+        font-size: 3em;
+    }
+    #contact .inputs form textarea {
+        height: 180px;
+        max-height: 180px;
+    }
+    #map .list-shop h4 {
+        right: 30%;
+    }
+    #contact .inputs form .form2 {
+        bottom: 155px;
+    }
+    #contact .inputs form .form4 {
+        width: 60%;
+    }
+}
