@@ -1,5 +1,3 @@
-<?php
-?>
 <section id="au">
     <div class="au-img1"></div>
     <div class="au-img2"></div>

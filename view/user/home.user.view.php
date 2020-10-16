@@ -1,5 +1,3 @@
-<?php
-?>
 <section id="welcome">
     <div>
         <img src="img/looks/bckc.jpg" alt="Cleaning-Products">

@@ -1,6 +1,3 @@
-<?php
-?>
-
 <section id="contact">
     <div class="img"></div>
     <div class="inputs">
