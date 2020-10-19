@@ -126,6 +126,7 @@ footer {
     width: 100%;
     background-color: #f5f5ee;
     height: 30px;
+    z-index: 5;
 }
 
 footer div p {
@@ -1056,7 +1057,7 @@ footer div p a:hover {
 }
 
 #catalog .products .promoted_item {
-    width: 61%;
+    width: 27%;
     min-height: 420px;
     flex: 0 0 auto;
     margin: 2% 1%;
@@ -1073,12 +1074,10 @@ footer div p a:hover {
 }
 
 #catalog .products .promoted_item img {
-    width: 40%;
-    float: left;
+    width: 76%;
     position: relative;
-    top: 20px;
-    left: 20px;
-    box-shadow: 30px 8px 0 1px #472d30;
+    bottom: 5px;
+    box-shadow: 20px -8px 0 1px #472d30;
 }
 
 #catalog .products .item h2 {
@@ -1093,10 +1092,12 @@ footer div p a:hover {
 
 #catalog .products .promoted_item h2 {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 2.2em;
+    height: 60px;
+    font-size: 1.9em;
     text-shadow: 1px 1px #c9cba3;
     position: relative;
-    bottom: 35px;
+    bottom: 32px;
+    z-index : 2;
 }
 
 #catalog .products .item .descr {
@@ -1107,16 +1108,10 @@ footer div p a:hover {
 }
 
 #catalog .products .promoted_item .descr{
+    height: 60px;
     font-size: 1.1em;
-    position: relative;
-    bottom: 5px;
-    float: right;
-    width: 50%;
-}
-
-#catalog .products .promoted_item p{
-    position: relative;
-    top: 15px;
+    text-align: justify;
+    padding: 0 10%;
 }
 
 #catalog .products .item a button {
@@ -1127,7 +1122,58 @@ footer div p a:hover {
     color: #E26d5c;
     padding: 10px;
     cursor: pointer;
-    margin: 15px 0;
+    margin: -35px 0 15px 0;
     position: relative;
-    left: 18%;
+    left: 20%;
+    bottom: 10px;
+}
+
+#catalog .products .item h5 {
+    font-size: 2.5em;
+    font-family: 'Bebas Neue', sans-serif;
+    position: relative;
+    width: 40%;
+    top: 29px;
+    right: 75px;
+    text-shadow: 1px 1px #472d30;
+}
+
+#catalog .products .item .category {
+    padding: 5px;
+    width: 50%;
+    background-color: #723d46;
+    color: #E26d5c;
+    text-transform: uppercase;
+}
+
+#catalog .products .promoted_item a button {
+    font-family: 'Bebas Neue', sans-serif;
+    background-color: #472d30;
+    border: none;
+    font-size: 1.4em;
+    color: #c9cba3;
+    padding: 10px;
+    cursor: pointer;
+    margin: -35px 0 15px 0;
+    position: relative;
+    left: 20%;
+    bottom: 10px;
+}
+
+#catalog .products .promoted_item h5 {
+    font-size: 2.5em;
+    font-family: 'Bebas Neue', sans-serif;
+    position: relative;
+    width: 40%;
+    top: 29px;
+    right: 75px;
+    text-shadow: 1px 1px #723d46;
+}
+
+#catalog .products .promoted_item .category {
+    padding: 5px;
+    width: 50%;
+    background-color: #472d30;
+    color: #c9cba3;
+    text-transform: uppercase;
 }

@@ -10,21 +10,33 @@
                     echo "<h2>".$item['name_product']."</h2>";
                     echo '<img src="img/'.$picture['name_img'].'" alt="'.$picture['alt_img'].'">';
                     echo "<p class='descr'>".$item['descr']." ... </p>";
-                    echo "<a href='?product=".$item['id_product']."'><button>more on this ►</button></a>";
-                    while ($cat = mysqli_fetch_assoc($category)){
-                        echo "<p>| ".$cat['name_category']." |</p>";
+                    if ($item['discount_product'] > 0 ){
+                        echo '<H5>DISCOUNT</H5>';
+                    } else {
+                        echo "<h5>".$item['price_product']." € </h5>";
                     }
-                    echo "</div>";
+                    echo "<a href='?product=".$item['id_product']."'><button>more on this ►</button></a>";
+                    echo "<p class='category'>";
+                    while ($cat = mysqli_fetch_assoc($category)){
+                        echo $cat['name_category']." ";
+                    }
+                    echo "</p></div>";
                 } else if ($item['promoted_product'] == 0) {
                     echo "<div class='item'>";
                     echo "<h2>".$item['name_product']."</h2>";
                     echo "<img src=\"img/".$picture['name_img']."\" alt=\"".$picture['alt_img']."\">";
                     echo "<p class='descr'>".$item['descr']." ... </p>";
-                    echo "<a href='?product=".$item['id_product']."'><button>more on this ►</button></a>";
-                    while ($cat = mysqli_fetch_assoc($category)){
-                        echo "<p>| ".$cat['name_category']." |</p>";
+                    if ($item['discount_product'] > 0 ){
+                        echo '<H5>DISCOUNT</H5>';
+                    } else {
+                        echo "<h5>".$item['price_product']." € </h5>";
                     }
-                    echo "</div>";
+                    echo "<a href='?product=".$item['id_product']."'><button>more on this ►</button></a>";
+                    echo "<p class='category'>";
+                    while ($cat = mysqli_fetch_assoc($category)){
+                        echo $cat['name_category']." ";
+                    }
+                    echo "</p></div>";
                 }
             }
         }
