@@ -60,9 +60,9 @@ if (!isset($_GET['page']) && !isset($_GET['admin']) && !isset($_GET['product']))
 
     } else if(isset($_GET['product']) && ctype_digit($_GET['product'])){
 
-        $pageId = (int) $_GET['product'];
-
         require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'view' . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . 'header.view.php';
+
+        $pageId = (int) $_GET['product'];
 
         include dirname(__DIR__) . DIRECTORY_SEPARATOR . 'controller' . DIRECTORY_SEPARATOR . 'user' . DIRECTORY_SEPARATOR . 'product.user.controller.php';
 

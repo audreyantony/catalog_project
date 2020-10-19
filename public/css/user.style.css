@@ -1026,3 +1026,31 @@ footer div p a:hover {
         width: 60%;
     }
 }
+
+/* 404 */
+
+.error {
+    width: 80%;
+}
+
+.error img {
+    margin-top: 50px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.error p {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5em;
+    color: #472d30;
+    margin: 50px auto;
+}
+
+.error button {
+    padding: 15px 20px;
+    background-color: #E26d5c;
+    color: #472d30;
+    font-size: 2em;
+    font-family: 'Bebas Neue', sans-serif;
+    border: none;
+}
