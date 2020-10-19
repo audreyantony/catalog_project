@@ -1055,7 +1055,7 @@ footer div p a:hover {
     width: 27%;
     min-height: 420px;
     flex: 0 0 auto;
-    margin: 2% 1%;
+    margin: 3% 1%;
     background-color: #E26d5c;
     color: #723d46;
     padding: 15px;
@@ -1133,6 +1133,10 @@ footer div p a:hover {
     bottom: 10px;
 }
 
+#catalog .products .item a button:hover {
+    text-shadow: 2px 2px #472d30;
+}
+
 #catalog .products .item h5 {
     font-size: 2.2em;
     font-family: 'Bebas Neue', sans-serif;
@@ -1163,6 +1167,10 @@ footer div p a:hover {
     position: relative;
     left: 20%;
     bottom: 10px;
+}
+
+#catalog .products .promoted_item a button:hover {
+    text-shadow: 2px 2px #723d46;
 }
 
 #catalog .products .promoted_item h5 {

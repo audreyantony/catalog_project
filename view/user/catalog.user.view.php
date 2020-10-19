@@ -44,10 +44,12 @@
     </div>
 </section>
 
+<div>
+    <a href="?page=catalog&catalog="></a>
+</div>
+
 <script type="text/javascript">
     function dicountedPrice(price, discount) {
         return price - (price * discount / 100);
     }
 </script>
-
-
