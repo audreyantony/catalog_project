@@ -1,7 +1,7 @@
 <?php
 
 function selectAllProducts($db){
-    $query = "SELECT *, LEFT(description_product, 60) AS descr FROM product;";
+    $query = "SELECT *, LEFT(description_product, 60) AS descr FROM product ORDER BY description_product DESC;";
     return mysqli_query($db, $query);
 }
 

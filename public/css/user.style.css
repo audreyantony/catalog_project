@@ -451,7 +451,12 @@ footer div p a:hover {
     letter-spacing: 2px;
     position: relative;
     bottom: 35px;
-    right: 17px;
+    right: 7px;
+}
+
+#clearance-potd .clearance div h3 span {
+    font-size: 0.7em;
+    font-family: 'Bebas Neue', sans-serif;
 }
 
 #clearance-potd .clearance div h4 {
@@ -1066,14 +1071,14 @@ footer div p a:hover {
     padding: 15px;
 }
 
-#catalog .products .item img {
+#catalog .products .item .img {
     width: 76%;
     position: relative;
     bottom: 5px;
     box-shadow: 20px -8px 0 1px #472d30;
 }
 
-#catalog .products .promoted_item img {
+#catalog .products .promoted_item .img {
     width: 76%;
     position: relative;
     bottom: 5px;
@@ -1096,7 +1101,7 @@ footer div p a:hover {
     font-size: 1.9em;
     text-shadow: 1px 1px #c9cba3;
     position: relative;
-    bottom: 32px;
+    bottom: 52px;
     z-index : 2;
 }
 
@@ -1129,12 +1134,12 @@ footer div p a:hover {
 }
 
 #catalog .products .item h5 {
-    font-size: 2.5em;
+    font-size: 2.2em;
     font-family: 'Bebas Neue', sans-serif;
     position: relative;
     width: 40%;
     top: 29px;
-    right: 75px;
+    right: 65px;
     text-shadow: 1px 1px #472d30;
 }
 
@@ -1150,7 +1155,7 @@ footer div p a:hover {
     font-family: 'Bebas Neue', sans-serif;
     background-color: #472d30;
     border: none;
-    font-size: 1.4em;
+    font-size: 1.1em;
     color: #c9cba3;
     padding: 10px;
     cursor: pointer;
@@ -1161,12 +1166,12 @@ footer div p a:hover {
 }
 
 #catalog .products .promoted_item h5 {
-    font-size: 2.5em;
+    font-size: 2.2em;
     font-family: 'Bebas Neue', sans-serif;
     position: relative;
     width: 40%;
     top: 29px;
-    right: 75px;
+    right: 65px;
     text-shadow: 1px 1px #723d46;
 }
 
@@ -1176,4 +1181,9 @@ footer div p a:hover {
     background-color: #472d30;
     color: #c9cba3;
     text-transform: uppercase;
+}
+
+#catalog .products .promoted_item h2 img {
+    width: 48px;
+    box-shadow: none;
 }

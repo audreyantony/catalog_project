@@ -12,19 +12,19 @@
 <section id="clearance-potd">
     <div class="clearance">
         <div class="burgundy">
-            <h3><?=$C1['discount']?> %</h3>
+            <h3><?=$C1['discount']?> % <span>on</span></h3>
             <h4><?=$C1['name']?> ...</h4>
             <p><?=$C1['descr']?> ...</p>
             <a href="?product=<?=$C1['id_product']?>"><button class="anis">Read more</button></a>
         </div>
         <div class="terracotta">
-            <h3><?=$C2['discount']?> %</h3>
+            <h3><?=$C2['discount']?> % <span>on</span></h3>
             <h4><?=$C2['name']?> ...</h4>
             <p><?=$C2['descr']?> ...</p>
             <a href="?product=<?=$C2['id_product']?>"><button class="salmon">Read more</button></a>
         </div>
         <div class="anis">
-            <h3><?=$C3['discount']?> %</h3>
+            <h3><?=$C3['discount']?> % <span>on</span></h3>
             <h4><?=$C3['name']?> ...</h4>
             <p><?=$C3['descr']?> ...</p>
             <a href="?product=<?=$C3['id_product']?>"><button class="burgundy">Read more</button></a>
