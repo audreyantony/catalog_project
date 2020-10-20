@@ -47,7 +47,6 @@ if (!isset($_GET['page']) && !isset($_GET['admin']) && !isset($_GET['product']))
 
         require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'view' . DIRECTORY_SEPARATOR . 'admin' . DIRECTORY_SEPARATOR . 'header.admin.view.php';
 
-
         switch ($_GET['admin']) {
             case "connect":
                 include dirname(__DIR__) . DIRECTORY_SEPARATOR . 'controller' . DIRECTORY_SEPARATOR . 'admin' . DIRECTORY_SEPARATOR . 'connect.admin.controller.php';
@@ -55,7 +54,7 @@ if (!isset($_GET['page']) && !isset($_GET['admin']) && !isset($_GET['product']))
             case "disconnect":
                 include dirname(__DIR__) . DIRECTORY_SEPARATOR . 'controller' . DIRECTORY_SEPARATOR . 'admin' . DIRECTORY_SEPARATOR . 'disconnect.admin.controller.php';
                 break;
-            case 'admin':
+            case 'home':
                 include dirname(__DIR__) . DIRECTORY_SEPARATOR . 'controller' . DIRECTORY_SEPARATOR . 'admin' . DIRECTORY_SEPARATOR . 'home.admin.controller.php';
                 break;
             default :

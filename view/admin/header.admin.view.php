@@ -16,11 +16,21 @@
             <img id="logo1" src="img/logo/logo-tiny-white.png" alt="All-natural Artifacts" style="width:120px;"/>
         </a>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item" href="#">Products</a>
-            <a class="dropdown-item" href="#">Shops</a>
-            <a class="dropdown-item"  href="#">Images</a>
-            <a class="dropdown-item"  href="#">Category</a>
+            <?php
+            if(isset($_SESSION['id_session'])&&$_SESSION['id_session']===session_id()){
+            echo '<a class="dropdown-item" href="?admin=home">Home</a>';
+            echo '<a class="dropdown-item" href="#">Products</a>';
+            echo '<a class="dropdown-item" href="#">Shops</a>';
+            echo '<a class="dropdown-item"  href="#">Images</a>';
+            echo '<a class="dropdown-item"  href="#">Category</a>';
+            }
+            ?>
             <a class="dropdown-item"  href="?page=home">Return</a>
+            <?php
+            if(isset($_SESSION['id_session'])&&$_SESSION['id_session']===session_id()){
+                echo '<a class="dropdown-item text-danger"  href="?admin=disconnect">Log out</a>';
+            }
+            ?>
         </div>
     </div>
 </nav>

@@ -1,5 +1,10 @@
 <?php
 
+if(isset($_SESSION['id_session'])&&$_SESSION['id_session']===session_id()){
+    header('Location: ?admin=home');
+    exit();
+}
+
 // CALLING MODEL
 include dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'model' . DIRECTORY_SEPARATOR . 'connect.admin.model.php';
 
@@ -14,8 +19,10 @@ if (isset($_POST['sign_in'])){
         if (mysqli_num_rows($query) === 0){
             $help = "This nickname doesn't exist";
         } else if (mysqli_num_rows($query) === 1 && $pwd){
-                header('Location: ?admin=home');
-                exit();
+            $_SESSION = $result;
+            $_SESSION['id_session'] = session_id();
+            header('Location: ?admin=home');
+            exit();
         } else if (mysqli_num_rows($query) === 1 && !$pwd){
             $help = "Your password is incorrect";
         } else {

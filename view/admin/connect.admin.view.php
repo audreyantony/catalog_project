@@ -10,7 +10,7 @@
         </div>
         <?php
         if (isset($help)){
-            echo "<small id=\"emailHelp\" class=\"form-text text-danger m-2\">".$help."</small>";
+            echo "<small id=\"emailHelp\" class=\"form-text text-danger m-3\">".$help."</small>";
         }
         ?>
         <button type="submit" name="sign_in" class="btn btn-dark">Submit</button>
