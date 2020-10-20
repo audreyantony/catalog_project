@@ -44,6 +44,10 @@ if (!isset($_GET['page']) && !isset($_GET['admin']) && !isset($_GET['product']))
         require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'view' . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . 'footer.view.php';
 
     } else if (isset($_GET['admin'])) {
+
+        require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'view' . DIRECTORY_SEPARATOR . 'admin' . DIRECTORY_SEPARATOR . 'header.admin.view.php';
+
+
         switch ($_GET['admin']) {
             case "connect":
                 include dirname(__DIR__) . DIRECTORY_SEPARATOR . 'controller' . DIRECTORY_SEPARATOR . 'admin' . DIRECTORY_SEPARATOR . 'connect.admin.controller.php';
@@ -57,6 +61,8 @@ if (!isset($_GET['page']) && !isset($_GET['admin']) && !isset($_GET['product']))
             default :
                 include dirname(__DIR__) . DIRECTORY_SEPARATOR . 'controller' . DIRECTORY_SEPARATOR . 'user' . DIRECTORY_SEPARATOR . '404.user.controller.php';
         }
+
+        require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'view' . DIRECTORY_SEPARATOR . 'admin' . DIRECTORY_SEPARATOR . 'footer.admin.view.php';
 
     } else if(isset($_GET['product']) && ctype_digit($_GET['product'])){
 
