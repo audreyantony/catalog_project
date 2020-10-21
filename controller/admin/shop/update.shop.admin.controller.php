@@ -7,11 +7,15 @@ include dirname(dirname(dirname(__DIR__))) . DIRECTORY_SEPARATOR . 'model' . DIR
 $shop = selectTheShop($pageId,$db);
 
 if (isset($_POST['send'])){
-    if(!empty($_POST['name']) && !empty($_POST['loca']) && !empty($_POST['street']) && !empty($_POST['pc']) && !empty($_POST['city']) && !empty($_POST['desc'])){
+    if(!empty($_POST['name']) && !empty($_POST['lat']) && !empty($_POST['long']) && !empty($_POST['street']) && !empty($_POST['pc']) && !empty($_POST['city']) && !empty($_POST['descr'])){
 
-        $update = updateTheShop(clean($_POST['name']), clean($_POST['loca']), clean($_POST['street']), clean($_POST['pc']), clean($_POST['city']), clean($_POST['desc']), $pageId, $db);
+        $update = updateTheShop(clean($_POST['name']), clean($_POST['lat']), clean($_POST['long']), clean($_POST['street']), clean($_POST['pc']), clean($_POST['city']), clean($_POST['descr']), $pageId, $db);
 
-
+        if ($update){
+            $win = "The update went through ! (You may have to refresh this page to see the changes)";
+        } else {
+            $help = "Something went wrong";
+        }
     } else {
         $help = "All fields needs to by filled";
     }

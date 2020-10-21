@@ -21,4 +21,8 @@ include dirname(__DIR__) . DIRECTORY_SEPARATOR . 'admin'. DIRECTORY_SEPARATOR . 
 
     include dirname(__DIR__) . DIRECTORY_SEPARATOR . 'admin'. DIRECTORY_SEPARATOR . 'shop' . DIRECTORY_SEPARATOR . 'update.shop.admin.controller.php';
 
+} else {
+
+    header('Location: ?admin=home');
+    exit();
 }

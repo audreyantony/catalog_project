@@ -46,7 +46,7 @@
                                     <tr>
                                         <th scope="row"><?=$shop['id_shop']?></th>
                                         <td><?=$shop['name_shop']?></td>
-                                        <td><?=$shop['localisation_shop']?></td>
+                                        <td><?=$shop['lat_shop']?> , <?=$shop['long_shop']?></td>
                                         <td class="w-25"><?=$shop['street_shop']?><br><?=$shop['post_code_shop']?><br><?=$shop['city_shop']?></td>
                                         <td><?=$shop['description_shop']?></td>
                                         <td>
@@ -60,7 +60,7 @@
                                     <tr>
                                         <td colspan="5" class="pt-3 pr-5 text-right">Add a shop :</td>
                                         <td colspan="1">
-                                            <a href="?admin=crud&insertshop=<?=$shop['id_shop']?>"><button type="button" class="btn btn-success ml-3 mb-2">ADD</button></a>
+                                            <a href="?admin=crud&insertshop"><button type="button" class="btn btn-success ml-3 mb-2">ADD</button></a>
                                         </td>
                                     </tr>
                                     </tbody>
