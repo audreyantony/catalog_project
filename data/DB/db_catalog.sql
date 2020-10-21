@@ -22,18 +22,20 @@ CREATE TABLE IF NOT EXISTS `catalog_project`.`user` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
+DROP TABLE IF EXISTS `product`;
 CREATE TABLE IF NOT EXISTS `product` (
   `id_product` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `name_product` varchar(100) NOT NULL,
   `description_product` tinytext NOT NULL,
   `price_product` decimal(7,2) NOT NULL,
   `discount_product` tinyint(3) UNSIGNED DEFAULT NULL,
+  `discount_start_date_product` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `discount_end_date_product` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `promoted_product` tinyint(3) UNSIGNED DEFAULT NULL,
   `instock_product` tinyint(3) UNSIGNED DEFAULT NULL,
   PRIMARY KEY (`id_product`),
   UNIQUE KEY `name_product_UNIQUE` (`name_product`)
-) 
+)
 ENGINE=InnoDB 
 DEFAULT CHARSET=utf8;
 
@@ -45,16 +47,18 @@ CREATE TABLE IF NOT EXISTS `catalog_project`.`img` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
+DROP TABLE IF EXISTS `shop`;
 CREATE TABLE IF NOT EXISTS `shop` (
-  `id_shop` int(11) NOT NULL,
+  `id_shop` int(11) NOT NULL AUTO_INCREMENT,
   `name_shop` varchar(40) NOT NULL,
-  `localisation_shop` varchar(80) NOT NULL,
+  `lat_shop` varchar(25) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `long_shop` varchar(25) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `street_shop` varchar(180) NOT NULL,
   `post_code_shop` varchar(5) NOT NULL,
   `city_shop` varchar(60) NOT NULL,
   `description_shop` tinytext NOT NULL,
   PRIMARY KEY (`id_shop`)
-) 
+)
 ENGINE=InnoDB DEFAULT 
 CHARSET=utf8;
 
