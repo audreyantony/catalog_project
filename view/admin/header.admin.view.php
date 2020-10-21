@@ -19,10 +19,6 @@
             <?php
             if(isset($_SESSION['id_session'])&&$_SESSION['id_session']===session_id()){
             echo '<a class="dropdown-item" href="?admin=home">Home</a>';
-            echo '<a class="dropdown-item" href="#">Products</a>';
-            echo '<a class="dropdown-item" href="#">Shops</a>';
-            echo '<a class="dropdown-item"  href="#">Images</a>';
-            echo '<a class="dropdown-item"  href="#">Category</a>';
             }
             ?>
             <a class="dropdown-item"  href="?page=home">Return</a>
