@@ -126,6 +126,7 @@ footer {
     width: 100%;
     background-color: #f5f5ee;
     height: 30px;
+    z-index: 5;
 }
 
 footer div p {
@@ -450,7 +451,12 @@ footer div p a:hover {
     letter-spacing: 2px;
     position: relative;
     bottom: 35px;
-    right: 17px;
+    right: 7px;
+}
+
+#clearance-potd .clearance div h3 span {
+    font-size: 0.7em;
+    font-family: 'Bebas Neue', sans-serif;
 }
 
 #clearance-potd .clearance div h4 {
@@ -1025,4 +1031,167 @@ footer div p a:hover {
     #contact .inputs form .form4 {
         width: 60%;
     }
+}
+
+/* CATALOG PAGE */
+
+#catalog {
+    width: 100%;
+    text-align: center;
+    margin: 50px auto;
+}
+
+#catalog .products {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center
+}
+
+#catalog .products .item {
+    width: 27%;
+    min-height: 420px;
+    flex: 0 0 auto;
+    margin: 3% 1%;
+    background-color: #E26d5c;
+    color: #723d46;
+    padding: 15px;
+}
+
+#catalog .products .promoted_item {
+    width: 27%;
+    min-height: 420px;
+    flex: 0 0 auto;
+    margin: 2% 1%;
+    background-color: #c9cba3;
+    color: #472d30;
+    padding: 15px;
+}
+
+#catalog .products .item .img {
+    width: 76%;
+    position: relative;
+    bottom: 5px;
+    box-shadow: 20px -8px 0 1px #472d30;
+}
+
+#catalog .products .promoted_item .img {
+    width: 76%;
+    position: relative;
+    bottom: 5px;
+    box-shadow: 20px -8px 0 1px #472d30;
+}
+
+#catalog .products .item h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    height: 60px;
+    font-size: 1.9em;
+    text-shadow: 1px 1px #E26d5c;
+    position: relative;
+    bottom: 32px;
+    z-index : 2;
+}
+
+#catalog .products .promoted_item h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    height: 60px;
+    font-size: 1.9em;
+    text-shadow: 1px 1px #c9cba3;
+    position: relative;
+    bottom: 52px;
+    z-index : 2;
+}
+
+#catalog .products .item .descr {
+    height: 60px;
+    font-size: 1.1em;
+    text-align: justify;
+    padding: 0 10%;
+}
+
+#catalog .products .promoted_item .descr{
+    height: 60px;
+    font-size: 1.1em;
+    text-align: justify;
+    padding: 0 10%;
+}
+
+#catalog .products .item a button {
+    font-family: 'Bebas Neue', sans-serif;
+    background-color: #723d46;
+    border: none;
+    font-size: 1.1em;
+    color: #E26d5c;
+    padding: 10px;
+    cursor: pointer;
+    margin: -35px 0 15px 0;
+    position: relative;
+    left: 20%;
+    bottom: 10px;
+}
+
+#catalog .products .item a button:hover {
+    text-shadow: 2px 2px #472d30;
+}
+
+#catalog .products .item h5 {
+    font-size: 2.2em;
+    font-family: 'Bebas Neue', sans-serif;
+    position: relative;
+    width: 40%;
+    top: 29px;
+    right: 65px;
+    text-shadow: 1px 1px #472d30;
+}
+
+#catalog .products .item .category {
+    padding: 5px;
+    width: 50%;
+    background-color: #723d46;
+    color: #E26d5c;
+    text-transform: uppercase;
+}
+
+#catalog .products .promoted_item a button {
+    font-family: 'Bebas Neue', sans-serif;
+    background-color: #472d30;
+    border: none;
+    font-size: 1.1em;
+    color: #c9cba3;
+    padding: 10px;
+    cursor: pointer;
+    margin: -35px 0 15px 0;
+    position: relative;
+    left: 20%;
+    bottom: 10px;
+}
+
+#catalog .products .promoted_item a button:hover {
+    text-shadow: 2px 2px #723d46;
+}
+
+#catalog .products .promoted_item h5 {
+    font-size: 2.2em;
+    font-family: 'Bebas Neue', sans-serif;
+    position: relative;
+    width: 40%;
+    top: 29px;
+    right: 65px;
+    text-shadow: 1px 1px #723d46;
+}
+
+#catalog .products .promoted_item .category {
+    padding: 5px;
+    width: 50%;
+    background-color: #472d30;
+    color: #c9cba3;
+    text-transform: uppercase;
+}
+
+#catalog .products .promoted_item h2 img {
+    width: 48px;
+    box-shadow: none;
 }
