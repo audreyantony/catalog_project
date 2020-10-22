@@ -11,5 +11,9 @@ include dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'model' . DIRECTORY_SE
 // CONTROLLER CODE
 $shops = selectAllShops($db);
 
+$categories = selectAllCategories($db);
+
+$images = selectAllImages($db);
+
 // CALLING VIEW
 include dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'view' . DIRECTORY_SEPARATOR . 'admin' . DIRECTORY_SEPARATOR . 'home.admin.view.php';

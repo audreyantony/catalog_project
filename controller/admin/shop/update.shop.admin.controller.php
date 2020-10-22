@@ -12,7 +12,8 @@ if (isset($_POST['send'])){
         $update = updateTheShop(clean($_POST['name']), clean($_POST['lat']), clean($_POST['long']), clean($_POST['street']), clean($_POST['pc']), clean($_POST['city']), clean($_POST['descr']), $pageId, $db);
 
         if ($update){
-            $win = "The update went through ! (You may have to refresh this page to see the changes)";
+            $shop = selectTheShop($pageId,$db);
+            $win = "The update went through !";
         } else {
             $help = "Something went wrong";
         }

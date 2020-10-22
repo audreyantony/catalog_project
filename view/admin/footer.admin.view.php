@@ -1,6 +1,7 @@
+<div style="height: 100px"></div>
 <footer class="footer font-small fixed-bottom grey bg-light">
     <div class="footer-copyright text-center py-3">© 2020 Copyright:
-        <a href="?page=home"> allnatural-artifacts.com</a>
+        <a href="?page=home" class="badge badge-pill badge-dark"> allnatural-artifacts.com</a>
     </div>
 </footer>
 

@@ -1,4 +1,4 @@
-<section class="container col-md-5 ml-auto mr-auto m-5 text-center">
+<section class="container col-md-4 ml-auto mr-auto m-5 text-center">
     <h1 class="text-danger m-3">THIS IS THE DELETE PAGE</h1>
     <div class="card text-right" style="width: 36rem;">
         <div class="card-body">
@@ -15,4 +15,3 @@
     </div>
     <a href="?admin=home"><button type="button" class="btn btn-light mt-5"> << Go back</button></a>
 </section>
-
