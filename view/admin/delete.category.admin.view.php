@@ -6,7 +6,7 @@
             <h6 class="card-subtitle mb-2 text-muted text-left">This category ID = <?=$category['id_category']?></h6>
             <a href="?admin=crud&updatecategory=<?=$category['id_category']?>"><button type="button" class="btn btn-primary ml-3 mb-2">UPDATE</button></a>
             <hr>
-            <p class="card-text text-danger mt-5"> WARNING ! <br>You will not be able to cancel <br>the deletion of this caetgory. </p>
+            <p class="card-text text-danger mt-5"> WARNING ! <br>You will not be able to cancel <br>the deletion of this category. </p>
             <a href="?admin=crud&deletecategory=<?=$category['id_category']?>&confirm=yes"><button type="button" class="btn btn-danger ml-3 mb-2">DELETE</button></a>
         </div>
     </div>
