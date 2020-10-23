@@ -53,6 +53,22 @@ include dirname(__DIR__) . DIRECTORY_SEPARATOR . 'admin'. DIRECTORY_SEPARATOR . 
 
     include dirname(__DIR__) . DIRECTORY_SEPARATOR . 'admin'. DIRECTORY_SEPARATOR . 'image' . DIRECTORY_SEPARATOR . 'update.image.admin.controller.php';
 
+} else if (isset($_GET['insertproduct'])){
+
+    include dirname(__DIR__) . DIRECTORY_SEPARATOR . 'admin'. DIRECTORY_SEPARATOR . 'product' . DIRECTORY_SEPARATOR . 'insert.product.admin.controller.php';
+
+} else if (isset($_GET['deleteproduct']) && ctype_digit($_GET['deleteproduct'])){
+
+    $pageId = (int) $_GET['deleteproduct'];
+
+    include dirname(__DIR__) . DIRECTORY_SEPARATOR . 'admin'. DIRECTORY_SEPARATOR . 'product' . DIRECTORY_SEPARATOR . 'delete.product.admin.controller.php';
+
+} else if (isset($_GET['updateproduct']) && ctype_digit($_GET['updateproduct'])){
+
+    $pageId = (int) $_GET['updateproduct'];
+
+    include dirname(__DIR__) . DIRECTORY_SEPARATOR . 'admin'. DIRECTORY_SEPARATOR . 'product' . DIRECTORY_SEPARATOR . 'update.product.admin.controller.php';
+
 } else {
 
     header('Location: ?admin=home');

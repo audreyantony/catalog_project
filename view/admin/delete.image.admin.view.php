@@ -8,7 +8,7 @@
             <p class="card-text text-left">Alt : <?=$img['id_img']?></p>
             <a href="?admin=crud&updateimage=<?=$img['id_img']?>"><button type="button" class="btn btn-primary ml-3 mb-2">UPDATE</button></a>
             <hr>
-            <p class="card-text text-danger mt-5"> WARNING ! <br>You will not be able to cancel <br>the deletion of this caetgory. </p>
+            <p class="card-text text-danger mt-5"> WARNING ! <br>You will not be able to cancel <br>the deletion of this image. </p>
             <a href="?admin=crud&deleteimage=<?=$img['id_img']?>&confirm=yes"><button type="button" class="btn btn-danger ml-3 mb-2">DELETE</button></a>
         </div>
     </div>
