@@ -128,7 +128,7 @@ function selectCategoryProducts($id, $db){
 function deleteTheProduct($id, $db){
     mysqli_begin_transaction($db);
     $query = mysqli_query($db, "DELETE FROM product_has_img WHERE product_id_product_has_img = ". $id .";");
-    $query2 = mysqli_query($db,"DELETE FROM producthas_category WHERE product_id_product = ".$id.";");
+    $query2 = mysqli_query($db,"DELETE FROM product_has_category WHERE product_id_product = ".$id.";");
     $query3 = mysqli_query($db,"DELETE FROM product WHERE id_product = ".$id.";");
     if ($query && $query2 && $query3){
         mysqli_commit($db);

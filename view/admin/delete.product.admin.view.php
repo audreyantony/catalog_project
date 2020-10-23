@@ -30,6 +30,11 @@
                 echo "No";
                 }
                 ?><br>
+                <?php
+                if (isset($help)){
+                    echo "<small class=\"form-text text-danger mt-4 ml-3\">".$help."</small>";
+                }
+                ?>
             </p>
             <a href="?admin=crud&updateproduct=<?=$product['id_product']?>"><button type="button" class="btn btn-primary ml-3 mb-2">UPDATE</button></a>
             <hr>
