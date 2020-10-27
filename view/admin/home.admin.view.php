@@ -37,7 +37,14 @@
                                         $category = selectCategoryProducts($product['id_product'], $db);?>
                                         <tr>
                                             <th scope="row"><?=$product['id_product']?></th>
-                                            <td><?=$product['name_product']?><br class="mb-3"><img style="width: 150px" class="img" src="img/<?=$picture['name_img']?>" alt="<?=$picture['alt_img']?>"><br>
+                                            <td><?=$product['name_product']?><br class="mb-3">
+                                                <?php
+                                                if (!empty($picture['name_img'])){
+                                                    echo  "<img style=\"width: 150px\" class=\"img\" src=\"img/".$picture['name_img']."\" alt=\"".$picture['alt_img']."\">";
+                                                } else {
+                                                    echo "<span class='text-muted'>This product doesn't have an image</span>";
+                                                }
+                                                ?> <br>
                                                 <?php if ($product['instock_product'] == 0 ){
                                                     echo "<p class='text-danger'>This product isn't in stock</p>";
                                                 } else {echo "<p class='text-success'>This product is in stock</p>";}?></td>

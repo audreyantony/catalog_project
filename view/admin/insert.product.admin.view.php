@@ -12,16 +12,17 @@
                 </div>
                 <div class="form-group">
                     <label class="text-uppercase">description_product</label>
-                    <textarea class="form-control" rows="4"></textarea>
+                    <textarea class="form-control" name="description" rows="4"></textarea>
                 </div>
                 <div class="form-group">
                     <label class="text-uppercase">price_product</label>
-                    <input type="text" name="name" class="form-control">
+                    <input type="text" name="price" class="form-control" pattern="\d+(\.\d{1,2})?">
+                    <small class="form-text text-muted">Format : 123.45</small>
                 </div>
                 <div class="row">
                     <div class="col">
                         <label class="text-uppercase">Discount_product</label>
-                        <select class="form-control w-100">
+                        <select name="discount" class="form-control w-100">
                             <option value="0" selected>None</option>
                             <option value="10">10 %</option>
                             <option value="15">15 %</option>
@@ -43,22 +44,50 @@
                     </div>
                     <div class="col">
                         <label class="text-uppercase">Discount_end</label>
-                        <input type="text" class="form-control" placeholder="15">
+                        <input type="text" name="end" class="form-control" placeholder="I F  N E E D E D">
                         <small class="form-text text-muted">in ... days</small>
                     </div>
                 </div>
+
+            </div>
+            <div class="container">
                 <div class="form-group">
-                    <label class="text-uppercase">promoted_product</label>
-                    <select class="custom-select my-1 mr-sm-2">
+                    <label class="text-uppercase">Promoted_product</label>
+                    <select class="custom-select my-1 mr-sm-2" name="promoted">
                         <option value="0" selected>No</option>
                         <option value="1">Yes</option>
                     </select>
                 </div>
-            </div>
-            <div class="container">
                 <div class="form-group">
-                    <label class="text-uppercase">alt_img</label>
-                    <input type="text" name="alt" class="form-control">
+                    <label class="text-uppercase">Instock_product</label>
+                    <select class="custom-select my-1 mr-sm-2" name="stock">
+                        <option value="1" selected>Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="text-uppercase">First Category_product</label>
+                    <select name="category" class="form-control w-100">
+                        <option value="0" selected>None (not recommended)</option>
+                        <?php
+                        while ($cat = mysqli_fetch_assoc($category)){
+                            echo '<option value="'.$cat['id_category'].'">'.$cat['name_category'].'</option>';
+                        }
+                        ?>
+                    </select>
+                    <small class="form-text text-muted">You'll be able to add more categories later</small>
+                </div>
+                <div class="form-group">
+                    <label class="text-uppercase"> First image_product</label>
+                    <select name="image" class="form-control w-100">
+                        <option value="0" selected>None (not recommanded)</option>
+                        <?php
+                        while ($img = mysqli_fetch_assoc($image)){
+                            echo '<option value="'.$img['id_img'].'">'.$img['name_img'].'</option>';
+                        }
+                        ?>
+                    </select>
+                    <small class="form-text text-muted">You'll be able to add more images later</small>
                 </div>
                 <?php
                 if (isset($help)){
