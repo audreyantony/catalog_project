@@ -66,9 +66,9 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label class="text-uppercase">First Category_product</label>
+                    <label class="text-uppercase">Main Category_product</label>
                     <select name="category" class="form-control w-100">
-                        <option value="0" selected>None (not recommended)</option>
+                        <option value="0" selected>You have to choose one</option>
                         <?php
                         while ($cat = mysqli_fetch_assoc($category)){
                             echo '<option value="'.$cat['id_category'].'">'.$cat['name_category'].'</option>';
@@ -78,9 +78,9 @@
                     <small class="form-text text-muted">You'll be able to add more categories later</small>
                 </div>
                 <div class="form-group">
-                    <label class="text-uppercase"> First image_product</label>
+                    <label class="text-uppercase">Main image_product</label>
                     <select name="image" class="form-control w-100">
-                        <option value="0" selected>None (not recommanded)</option>
+                        <option value="0" selected>You have to choose one</option>
                         <?php
                         while ($img = mysqli_fetch_assoc($image)){
                             echo '<option value="'.$img['id_img'].'">'.$img['name_img'].'</option>';

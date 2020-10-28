@@ -4,7 +4,16 @@
 include dirname(dirname(dirname(__DIR__))) . DIRECTORY_SEPARATOR . 'model' . DIRECTORY_SEPARATOR . 'admin.model.php';
 
 // CONTROLLER CODE
-/*$shop = selectTheShop($pageId,$db);
+$product = selectTheProduct($pageId,$db);
+
+$category = selectAllCategories($db);
+
+$image = selectAllImages($db);
+
+if (isset($categoryIdToDelete)){
+    echo "oui";
+    $delete = deleteProductAndCategory($pageId, $_GET['deletecategory'], $db);
+}
 
 if (isset($_POST['send'])){
     if(!empty($_POST['name']) && !empty($_POST['lat']) && !empty($_POST['long']) && !empty($_POST['street']) && !empty($_POST['pc']) && !empty($_POST['city']) && !empty($_POST['descr'])){
@@ -20,7 +29,7 @@ if (isset($_POST['send'])){
     } else {
         $help = "All fields needs to by filled";
     }
-}*/
+}
 
 // CALLING VIEW
 include dirname(dirname(dirname(__DIR__))) . DIRECTORY_SEPARATOR . 'view' . DIRECTORY_SEPARATOR . 'admin' . DIRECTORY_SEPARATOR . 'update.product.admin.view.php';

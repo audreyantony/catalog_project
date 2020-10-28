@@ -104,25 +104,43 @@ function deleteTheImage($id, $db){
 }
 
 function selectAllProductsSmall($db) {
-    $query = "SELECT *, LEFT(description_product, 80) AS description_product FROM product ORDER BY id_product ASC;";
+    $query = "
+    SELECT DISTINCT p.id_product AS id_product,
+                    p.name_product, LEFT(description_product, 90) AS description_product,
+                    p.price_product, p.discount_product, p.discount_end_date_product, 
+                    p.promoted_product, p.instock_product, p.discount_start_date_product, 
+                    GROUP_CONCAT( DISTINCT img.name_img SEPARATOR 'µµ') AS name_img, 
+                    GROUP_CONCAT( DISTINCT img.alt_img SEPARATOR 'µµ') AS alt_img ,
+                    GROUP_CONCAT(DISTINCT category.name_category SEPARATOR 'µµ') AS name_category 
+    FROM product AS p 
+        JOIN product_has_img ON id_product = product_id_product_has_img 
+        JOIN img ON img_id_product_has_img = id_img 
+        JOIN product_has_category ON id_product = product_id_product 
+        JOIN category ON category_id_category = id_category 
+    GROUP BY id_product 
+    ORDER BY p.id_product ASC ;";
     return mysqli_query($db,$query);
 }
 
-function selectTheProduct($id, $db){
-    $query = "SELECT * FROM product WHERE id_product = ".$id.";";
-    $result = mysqli_query($db,$query);
-    return mysqli_fetch_assoc($result);
-}
-
-function selectImgProducts($id, $db){
-    $query = "SELECT id_product, name_img, alt_img FROM product JOIN product_has_img ON id_product = product_id_product_has_img JOIN img ON img_id_product_has_img = id_img WHERE id_product = ".$id." LIMIT 1;";
+function selectTheProduct($id, $db)
+{
+    $query = "SELECT DISTINCT p.id_product AS id_product,
+                    p.name_product, p.description_product,
+                    p.price_product, p.discount_product, p.discount_end_date_product, 
+                    p.promoted_product, p.instock_product, p.discount_start_date_product, 
+                    GROUP_CONCAT( DISTINCT img.name_img SEPARATOR 'µµ') AS name_img, 
+                    GROUP_CONCAT( DISTINCT img.alt_img SEPARATOR 'µµ') AS alt_img ,
+                    GROUP_CONCAT(DISTINCT category.name_category SEPARATOR 'µµ') AS name_category,
+                    GROUP_CONCAT(DISTINCT category.id_category SEPARATOR 'µµ') AS id_category
+    FROM product AS p 
+        JOIN product_has_img ON id_product = product_id_product_has_img 
+        JOIN img ON img_id_product_has_img = id_img 
+        JOIN product_has_category ON id_product = product_id_product 
+        JOIN category ON category_id_category = id_category 
+    WHERE id_product = " . $id . "
+    GROUP BY id_product ;";
     $result = mysqli_query($db, $query);
     return mysqli_fetch_assoc($result);
-}
-
-function selectCategoryProducts($id, $db){
-    $query = "SELECT id_product, name_category FROM product JOIN product_has_category ON id_product = product_id_product JOIN category ON category_id_category = id_category WHERE id_product = ".$id.";";
-    return mysqli_query($db, $query);
 }
 
 function deleteTheProduct($id, $db){
@@ -137,4 +155,32 @@ function deleteTheProduct($id, $db){
         mysqli_rollback($db);
         return false;
     }
+}
+
+function insertTheProduct($name, $descr, $price, $discount, $end, $promoted, $stock, $cat, $img, $db){
+    if ($end ===''){
+        $end = 0;
+    }
+    $now = date('Y-m-d H:i:s');
+    $timeEnd = date('Y-m-d H:i:s',strtotime("+$end days", strtotime($now))) . '<br>';
+
+    mysqli_begin_transaction($db);
+
+    $product = mysqli_query($db,"INSERT INTO product (name_product, description_product, price_product, discount_product, discount_end_date_product, promoted_product, instock_product) VALUES ('".$name."','".$descr."','".$price."','".$discount."','".$timeEnd."','".$promoted."','".$stock."');");
+    $idProduct = mysqli_insert_id($db);
+    $productImg = mysqli_query($db, "INSERT INTO product_has_img (product_id_product_has_img, img_id_product_has_img) VALUES ( ".$idProduct.", ".$img.");");
+    $productCat = mysqli_query($db, "INSERT INTO product_has_category (product_id_product, category_id_category) VALUES ( ".$idProduct.", ".$cat.");");
+
+    if($product && $productImg && $productCat){
+        mysqli_commit($db);
+        return true;
+    } else {
+        mysqli_rollback($db);
+        return false;
+    }
+}
+
+function deleteProductAndCategory($productId, $categoryId, $db){
+    $query = "DELETE FROM product_has_category WHERE product_has_category.product_id_product = ".$productId." AND product_has_category.category_id_category = ".$categoryId.";";
+    return mysqli_query($db,$query);
 }

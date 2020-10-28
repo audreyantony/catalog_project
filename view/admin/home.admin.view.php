@@ -19,7 +19,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-12">
-                                <table class="table table-bordered">
+                                <table class="table table-bordered table-responsive-lg">
                                     <thead>
                                     <tr>
                                         <th scope="col">ID</th>
@@ -32,28 +32,14 @@
                                     </thead>
                                     <tbody>
                                     <?php
-                                    while ($product = mysqli_fetch_assoc($products)){
-                                        $picture = selectImgProducts($product['id_product'], $db);
-                                        $category = selectCategoryProducts($product['id_product'], $db);?>
+                                    while ($product = mysqli_fetch_assoc($products)){?>
                                         <tr>
-                                            <th scope="row"><?=$product['id_product']?></th>
-                                            <td><?=$product['name_product']?><br class="mb-3">
-                                                <?php
-                                                if (!empty($picture['name_img'])){
-                                                    echo  "<img style=\"width: 150px\" class=\"img\" src=\"img/".$picture['name_img']."\" alt=\"".$picture['alt_img']."\">";
-                                                } else {
-                                                    echo "<span class='text-muted'>This product doesn't have an image</span>";
-                                                }
-                                                ?> <br>
+                                            <th scope="row" rowspan="2"><?=$product['id_product']?></th>
+                                            <td><?=$product['name_product']?><br class="mb-3"><br>
                                                 <?php if ($product['instock_product'] == 0 ){
                                                     echo "<p class='text-danger'>This product isn't in stock</p>";
                                                 } else {echo "<p class='text-success'>This product is in stock</p>";}?></td>
-                                            <td><?=$product['description_product']?> ... <br class="mb-3">
-                                                <?php
-                                                while ($cat = mysqli_fetch_assoc($category)){
-                                                    echo "<p class='btn-light btn-sm'>".$cat['name_category']."</p>";
-                                                }
-                                                ?></td>
+                                            <td><?=$product['description_product']?> ... <br class="mb-3"></td>
                                             <td class="w-25"><p class="font-weight-light h4"><?=$product['price_product']?> €</p><br>
                                                 <?php if ($product['discount_product'] > 0 ){
                                                     echo "Discount : <span class='font-weight-light text-info h4'>".$product['discount_product']." %</span><br> Strating date : <br>".$product['discount_start_date_product']."<br> Ending date :<br> ".$product['discount_end_date_product'];
@@ -61,10 +47,38 @@
                                             <td><?php if ($product['promoted_product'] == 0 ){
                                                     echo "This product isn't promoted";
                                                 } else {echo "<p class='text-success'>This is the product of the day</p>";}?></td>
-                                            <td>
+                                            <td rowspan="2">
                                                 <a href="?admin=crud&updateproduct=<?=$product['id_product']?>"><button type="button" class="btn btn-primary ml-3 mb-2">UPDATE</button></a>
                                                 <a href="?admin=crud&deleteproduct=<?=$product['id_product']?>"><button type="button" class="btn btn-danger ml-3 mb-2">DELETE</button></a>
                                             </td>
+                                        </tr>
+                                        <tr>
+                                            <td><p>Category(ies) :</p>
+                                                <?php
+                                                if(!empty($product["name_category"])) {
+                                                    $categoryName = explode("µµ", $product["name_category"]);
+                                                    $i = 0;
+                                                    foreach ($categoryName AS $cat) {
+                                                        echo "<p class=\"btn btn-light\">$cat</p><br>";
+                                                        $i++;
+                                                        if ($i === 3){
+                                                            echo "</tr><tr>";
+                                                        }
+                                                    }
+                                                }
+                                                ?>
+                                            </td><td colspan="3">
+                                            <?php
+                                            if(!empty($product["name_img"])) {
+                                                $imgName = explode("µµ", $product["name_img"]);
+                                                $imgAlt = explode("µµ", $product["alt_img"]);
+                                                $i = 0;
+                                                foreach ($imgName AS $img) {
+                                                    echo "<img style=\"width: 140px;\" class=\"img bg-secondary border border-secondary\" src=\"img/" . $img . "\" alt=\"" . $imgAlt[$i] . "\"> ";
+                                                    $i++;
+                                                }
+                                            }
+                                            ?></td>
                                         </tr>
                                         <?php
                                     }
