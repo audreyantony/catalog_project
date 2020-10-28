@@ -72,7 +72,7 @@
                     echo "<small class=\"form-text text-success mt-4 ml-3\">".$win."</small>";
                 }
                 ?>
-                <input type="submit" name="insert" value="Submit" class="btn btn-primary mt-5 float-right">
+                <input type="submit" name="send" value="Submit" class="btn btn-primary mt-5 float-right">
             </div>
         </div>
     </form>
@@ -96,7 +96,7 @@
                         ?>
                         <form class="form-group" method="post">
                             <div class="form-group">
-                                <select name="image" class="form-control">
+                                <select name="cat" class="form-control">
                                     <option value="0" selected>Add ...</option>
                                     <?php
                                     while ($cat = mysqli_fetch_assoc($category)){
@@ -105,7 +105,15 @@
                                     ?>
                                 </select>
                             </div>
-                            <button type="submit" name="submitImage" class="btn btn-primary block">GO</button>
+                            <?php
+                            if (isset($helpCat)){
+                                echo "<small class=\"form-text text-danger mt-4 ml-3 mb-5\">".$helpCat."</small>";
+                            }
+                            if (isset($winCat)){
+                                echo "<small class=\"form-text text-success mt-4 ml-3 mb-5\">".$winCat."</small>";
+                            }
+                            ?>
+                            <button type="submit" name="submitCat" class="btn btn-primary block">GO</button>
                         </form>
                     </div>
                 </div>
@@ -134,6 +142,14 @@
                                     ?>
                                 </select>
                             </div>
+                            <?php
+                            if (isset($helpImg)){
+                                echo "<small class=\"form-text text-danger mt-4 ml-3 mb-5\">".$helpImg."</small>";
+                            }
+                            if (isset($winImg)){
+                                echo "<small class=\"form-text text-success mt-4 ml-3 mb-5\">".$winImg."</small>";
+                            }
+                            ?>
                             <button type="submit" name="submitImage" class="btn btn-primary block">GO</button>
                         </form>
                     </div>

@@ -162,7 +162,7 @@ function insertTheProduct($name, $descr, $price, $discount, $end, $promoted, $st
         $end = 0;
     }
     $now = date('Y-m-d H:i:s');
-    $timeEnd = date('Y-m-d H:i:s',strtotime("+$end days", strtotime($now))) . '<br>';
+    $timeEnd = date('Y-m-d H:i:s',strtotime("+$end days", strtotime($now)));
 
     mysqli_begin_transaction($db);
 
@@ -182,5 +182,27 @@ function insertTheProduct($name, $descr, $price, $discount, $end, $promoted, $st
 
 function deleteProductAndCategory($productId, $categoryId, $db){
     $query = "DELETE FROM product_has_category WHERE product_has_category.product_id_product = ".$productId." AND product_has_category.category_id_category = ".$categoryId.";";
+    return mysqli_query($db,$query);
+}
+
+function AddProductCategory($catId, $prodId, $db){
+    $query = "INSERT INTO product_has_category (product_id_product, category_id_category) VALUES (".$prodId.", ".$catId.");";
+    return mysqli_query($db,$query);
+}
+
+function AddProductImage($imgId, $prodId, $db){
+    $query = "INSERT INTO product_has_img (product_id_product_has_img, img_id_product_has_img) VALUES (".$prodId.", ".$imgId.");";
+    return mysqli_query($db,$query);
+}
+
+function updateTheProduct($name, $description, $price, $discount, $end, $promoted, $stock, $id, $db){
+    if ($end ===''){
+        $end = 0;
+    }
+    $now = date('Y-m-d H:i:s');
+    $timeEnd = date('Y-m-d H:i:s',strtotime("+$end days", strtotime($now)));
+
+    $query = "UPDATE product SET name_product = ".$name.", description_product = ".$description.", price_product = ".$price.", discount_product = ".$discount.", discount_end_date_product = ".$timeEnd.", promoted_product = ".$promoted.", instock_product = ".$stock." WHERE id_product = ".$id.";";
+
     return mysqli_query($db,$query);
 }
