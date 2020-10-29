@@ -89,7 +89,7 @@
                             $categoryId = explode("µµ", $product["id_category"]);
                             $i = 0;
                             foreach ($categoryName AS $cat) {
-                                echo "<p class='btn btn-light'>".$cat." <a href='?admin=crud&updateproduct=".$product['id_product']."&categoryToDelete=".$categoryId[$i]."'><button class='btn btn-outline-danger m-1'>&#x2716</button></a></p>";
+                                echo "<p class='btn btn-light'>".$cat." <a href='?admin=crud&updateproduct=".$product['id_product']."&categorytodelete=".$categoryId[$i]."'><button type='button' class='btn btn-outline-danger m-1'>&#x2716</button></a></p>";
                                 $i++;
                             }
                         }
@@ -97,7 +97,7 @@
                         <form class="form-group" method="post">
                             <div class="form-group">
                                 <select name="cat" class="form-control">
-                                    <option value="0" selected>Add ...</option>
+                                    <option value="0" selected>M O R E</option>
                                     <?php
                                     while ($cat = mysqli_fetch_assoc($category)){
                                         echo '<option value="'.$cat['id_category'].'">'.$cat['name_category'].'</option>';
@@ -113,7 +113,7 @@
                                 echo "<small class=\"form-text text-success mt-4 ml-3 mb-5\">".$winCat."</small>";
                             }
                             ?>
-                            <button type="submit" name="submitCat" class="btn btn-primary block">GO</button>
+                            <button type="submit" name="submitCat" class="btn btn-primary block">ADD</button>
                         </form>
                     </div>
                 </div>
@@ -124,9 +124,10 @@
                         if(!empty($product["name_img"])) {
                             $imgName = explode("µµ", $product["name_img"]);
                             $imgAlt = explode("µµ", $product["alt_img"]);
+                            $imgId = explode("µµ", $product["id_img"]);
                             $i = 0;
                             foreach ($imgName AS $img) {
-                                echo "<p class='btn btn-light'><img style=\"width: 80px;\" class=\"img bg-secondary mb-2 border border-secondary\" src=\"img/" . $img . "\" alt=\"" . $imgAlt[$i] . "\"><a href=''><button class='btn btn-outline-danger m-1'> 	&#x274C;</button></a></p> ";
+                                echo "<p class='btn btn-light'><img style=\"width: 80px;\" class=\"img bg-secondary mb-2 border border-secondary\" src=\"img/" . $img . "\" alt=\"" . $imgAlt[$i] . "\"><a href='?admin=crud&updateproduct=".$product['id_product']."&imagetodelete=".$imgId[$i]."'><button type='button' class='btn btn-outline-danger m-1'>&#x2716</button></a></p> ";
                                 $i++;
                             }
                         }
@@ -134,7 +135,7 @@
                         <form class="form-group" method="post">
                             <div class="form-group">
                                 <select name="image" class="form-control">
-                                    <option value="0" selected>Add ...</option>
+                                    <option value="0" selected>M O R E</option>
                                     <?php
                                     while ($img = mysqli_fetch_assoc($image)){
                                         echo '<option value="'.$img['id_img'].'">'.$img['name_img'].'</option>';
@@ -150,7 +151,7 @@
                                 echo "<small class=\"form-text text-success mt-4 ml-3 mb-5\">".$winImg."</small>";
                             }
                             ?>
-                            <button type="submit" name="submitImage" class="btn btn-primary block">GO</button>
+                            <button type="submit" name="submitImage" class="btn btn-primary block">ADD</button>
                         </form>
                     </div>
                 </div>

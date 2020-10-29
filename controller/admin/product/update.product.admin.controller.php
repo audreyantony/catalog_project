@@ -10,9 +10,24 @@ $category = selectAllCategories($db);
 
 $image = selectAllImages($db);
 
-if (isset($categoryIdToDelete)){
-    echo "oui";
-    $delete = deleteProductAndCategory($pageId, $_GET['deletecategory'], $db);
+if (isset($_GET['categorytodelete'])){
+    $mixDelete = deleteProductAndCategory($pageId, $_GET['categorytodelete'], $db);
+    if ($mixDelete){
+        $product = selectTheProduct($pageId,$db);
+        $winCat = "The category has been deleted !";
+    } else {
+        $helpCat = "Something went wrong";
+    }
+}
+
+if (isset($_GET['imagetodelete'])){
+    $mixDelete = deleteProductAndImage($pageId, $_GET['imagetodelete'], $db);
+    if ($mixDelete){
+        $product = selectTheProduct($pageId,$db);
+        $winImg = "The image has been deleted !";
+    } else {
+        $helpImg = "Something went wrong";
+    }
 }
 
 if (isset($_POST['submitCat'])){
@@ -52,14 +67,6 @@ if (isset($_POST['send'])){
     if(!empty($_POST['name']) && !empty($_POST['description']) && !empty($_POST['price']) && isset($_POST['discount']) && isset($_POST['end']) && isset($_POST['promoted']) && isset($_POST['stock'])){
 
         $update = updateTheProduct(clean($_POST['name']), clean($_POST['description']), clean($_POST['price']), clean($_POST['discount']), clean($_POST['end']), clean($_POST['promoted']), clean($_POST['stock']), $pageId, $db);
-
-    echo $_POST['name']."<br>";
-    echo $_POST['description']."<br>";
-    echo $_POST['price']."<br>";
-    echo $_POST['discount']."<br>";
-    echo $_POST['end']."<br>";
-    echo $_POST['promoted']."<br>";
-    echo $_POST['stock']."<br>";
 
         if ($update){
             $product = selectTheProduct($pageId,$db);

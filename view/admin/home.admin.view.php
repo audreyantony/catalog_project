@@ -74,7 +74,7 @@
                                                 $imgAlt = explode("µµ", $product["alt_img"]);
                                                 $i = 0;
                                                 foreach ($imgName AS $img) {
-                                                    echo "<img style=\"width: 140px;\" class=\"img bg-secondary border border-secondary\" src=\"img/" . $img . "\" alt=\"" . $imgAlt[$i] . "\"> ";
+                                                    echo "<img style=\"width: 135px;\" class=\"img bg-secondary border border-secondary\" src=\"img/" . $img . "\" alt=\"" . $imgAlt[$i] . "\"> ";
                                                     $i++;
                                                 }
                                             }

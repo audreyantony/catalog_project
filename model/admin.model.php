@@ -130,6 +130,7 @@ function selectTheProduct($id, $db)
                     p.promoted_product, p.instock_product, p.discount_start_date_product, 
                     GROUP_CONCAT( DISTINCT img.name_img SEPARATOR 'µµ') AS name_img, 
                     GROUP_CONCAT( DISTINCT img.alt_img SEPARATOR 'µµ') AS alt_img ,
+                    GROUP_CONCAT( DISTINCT img.id_img SEPARATOR 'µµ') AS id_img ,
                     GROUP_CONCAT(DISTINCT category.name_category SEPARATOR 'µµ') AS name_category,
                     GROUP_CONCAT(DISTINCT category.id_category SEPARATOR 'µµ') AS id_category
     FROM product AS p 
@@ -185,6 +186,11 @@ function deleteProductAndCategory($productId, $categoryId, $db){
     return mysqli_query($db,$query);
 }
 
+function deleteProductAndImage($productId, $imgId, $db){
+    $query = "DELETE FROM product_has_img WHERE product_has_img.product_id_product_has_img = ".$productId." AND product_has_img.img_id_product_has_img = ".$imgId.";";
+    return mysqli_query($db,$query);
+}
+
 function AddProductCategory($catId, $prodId, $db){
     $query = "INSERT INTO product_has_category (product_id_product, category_id_category) VALUES (".$prodId.", ".$catId.");";
     return mysqli_query($db,$query);
@@ -196,13 +202,13 @@ function AddProductImage($imgId, $prodId, $db){
 }
 
 function updateTheProduct($name, $description, $price, $discount, $end, $promoted, $stock, $id, $db){
-    if ($end ===''){
+    if ($end === ''){
         $end = 0;
     }
     $now = date('Y-m-d H:i:s');
     $timeEnd = date('Y-m-d H:i:s',strtotime("+$end days", strtotime($now)));
 
-    $query = "UPDATE product SET name_product = ".$name.", description_product = ".$description.", price_product = ".$price.", discount_product = ".$discount.", discount_end_date_product = ".$timeEnd.", promoted_product = ".$promoted.", instock_product = ".$stock." WHERE id_product = ".$id.";";
+    $query = "UPDATE product SET name_product = '".$name."', description_product = '".$description."', price_product = '".$price."', discount_product = '".$discount."', discount_end_date_product = '".$timeEnd."', promoted_product = '".$promoted."', instock_product = '".$stock."' WHERE id_product = ".$id.";";
 
     return mysqli_query($db,$query);
 }
