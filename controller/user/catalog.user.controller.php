@@ -4,6 +4,9 @@
 include dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'model' . DIRECTORY_SEPARATOR . 'catalog.user.model.php';
 
 // CONTROLLER CODE
+
+$category = selectAllCategory($db);
+
 if (isset($_GET['catalog'])){
     $currentPage = $_GET['catalog'];
 } else {

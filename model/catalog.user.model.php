@@ -49,6 +49,11 @@ function selectCategoryProducts($id, $db){
     return mysqli_query($db, $query);
 }
 
+function selectAllCategory($db){
+    $query = "SELECT * FROM category;";
+    return mysqli_query($db, $query);
+}
+
 function pagination($productNumber, $currentPage, $productByPage = 6){
 
     $page = ceil($productNumber / $productByPage);

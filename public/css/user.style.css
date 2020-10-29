@@ -1054,10 +1054,26 @@ footer div p a:hover {
     position: relative;
     left: 120px;
     top: 40px;
+    color: #E26d5c;
 }
 
-#containercatalog #find {
+#containercatalog #find form div {
+    text-align: left;
+    margin: 20px;
+}
 
+#containercatalog #find form div input[type="checkbox"].demo {
+    display: none;
+}
+#containercatalog #find form div input[type="checkbox"].demo + label::before {
+    content:'';
+    border: 1px solid #E26d5c;
+    padding: 0 0.6rem;
+    margin-right: 0.3rem;
+}
+#containercatalog #find form div input[type="checkbox"].demo:checked + label::before {
+    margin-top: 10px;
+    background-color: #E26d5c;
 }
 
 #containercatalog #catalog {

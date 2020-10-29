@@ -3,7 +3,19 @@
         <h3>Search</h3>
         <form action="" method="post">
             <h4>Category :</h4>
+            <div>
+                <?php
+                while ($cat =mysqli_fetch_assoc($category)){
+                    echo '<input type="checkbox" name="category" class="demo" id="'.$cat['id_category'].'" value="'.$cat['id_category'].'">
+                       <label for="'.$cat['id_category'].'">'.$cat['name_category'].'</label><br><br>';
+                }
+                ?>
+            </div>
             <h4>Price range :</h4>
+            <div>
+
+                <input type="text">
+            </div>
         </form>
 
     </section>
