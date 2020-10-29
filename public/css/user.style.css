@@ -776,7 +776,7 @@ footer div p a:hover {
     background-image: url("../img/looks/shop.png");
     background-size: cover;
     position: absolute;
-    top: 250px;
+    top: 210px;
     left: 12%;
     box-shadow: -115px 25px 0 #c9cba3;
 }
@@ -787,7 +787,7 @@ footer div p a:hover {
     background-color: #472d30;
     color: #E26d5c;
     position: absolute;
-    top: 290px;
+    top: 250px;
     right: 12%;
     padding: 40px;
 }
