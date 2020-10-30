@@ -2,7 +2,7 @@
 
 function selectTheProduct($id, $db){
     $query = "SELECT DISTINCT p.id_product AS id_product,
-                    p.name_product, LEFT(description_product, 90) AS description_product,
+                    p.name_product, p.description_product,
                     p.price_product, p.discount_product, p.discount_end_date_product, 
                     p.promoted_product, p.instock_product, p.discount_start_date_product, 
                     GROUP_CONCAT( DISTINCT img.name_img SEPARATOR 'µµ') AS name_img, 
