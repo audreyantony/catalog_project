@@ -7,6 +7,18 @@ include dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'model' . DIRECTORY_SE
 
 $category = selectAllCategory($db);
 
+$maxPrice = selectMaxPrice($db);
+
+/*if (isset($_POST['search'])){
+    if (!empty($_POST['category'])){
+        foreach ($_POST['category'] as $cat){
+            echo $cat."<br>";
+        }
+    }
+    echo "<br>".$_POST['minimum']."<br>";
+    echo $_POST['maximum']."<br>";
+}*/
+
 if (isset($_GET['catalog'])){
     $currentPage = $_GET['catalog'];
 } else {

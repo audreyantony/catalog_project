@@ -1,20 +1,24 @@
 <section id="containercatalog">
     <section id="find">
-        <h3>Search</h3>
+        <h3>Search :</h3>
         <form action="" method="post">
             <h4>Category :</h4>
             <div>
                 <?php
                 while ($cat =mysqli_fetch_assoc($category)){
-                    echo '<input type="checkbox" name="category" class="demo" id="'.$cat['id_category'].'" value="'.$cat['id_category'].'">
+                    echo '<input type="checkbox" name="category['.$cat['id_category'].']" class="demo" id="'.$cat['id_category'].'" value="'.$cat['id_category'].'">
                        <label for="'.$cat['id_category'].'">'.$cat['name_category'].'</label><br><br>';
                 }
                 ?>
             </div>
             <h4>Price range :</h4>
+            <div id="price">
+                <p>See the products between :</p><br>
+                <input type="text" name="minimum" id="min" value="0"><label for="min"> € & </label>
+                <input type="text" name="maximum" id="max" value="<?=$maxPrice['price_product']?>"><label for="min"> €</label>
+            </div>
             <div>
-
-                <input type="text">
+                <button type="submit" name="search"> GO ► </button>
             </div>
         </form>
 
@@ -30,13 +34,12 @@
                         echo "<div class='promoted_item'>";
                         echo "<h2><img src=\"img/icon/thumb.png\" alt=\"thumb-up\"> " . $item['name_product'] . "</h2>";
                         echo '<img class="img" src="img/' . $picture['name_img'] . '" alt="' . $picture['alt_img'] . '">';
-                        echo "<p class='descr'>" . $item['descr'] . " ... </p>";
                         if ($item['discount_product'] > 0) {
                             echo '<H5>DISCOUNT</H5>';
                         } else {
                             echo "<h5>" . $item['price_product'] . " € </h5>";
                         }
-                        echo "<a href='?product=" . $item['id_product'] . "'><button>more on this ►</button></a>";
+                        echo "<a href='?product=" . $item['id_product'] . "'><button>See More ►</button></a>";
                         echo "<p class='category'>";
                         while ($cat = mysqli_fetch_assoc($category)) {
                             echo $cat['name_category'] . " ";
@@ -46,13 +49,12 @@
                         echo "<div class='item'>";
                         echo "<h2>" . $item['name_product'] . "</h2>";
                         echo "<img class=\"img\" src=\"img/" . $picture['name_img'] . "\" alt=\"" . $picture['alt_img'] . "\">";
-                        echo "<p class='descr'>" . $item['descr'] . " ... </p>";
                         if ($item['discount_product'] > 0) {
                             echo '<H5>DISCOUNT</H5>';
                         } else {
                             echo "<h5>" . $item['price_product'] . " € </h5>";
                         }
-                        echo "<a href='?product=" . $item['id_product'] . "'><button>more on this ►</button></a>";
+                        echo "<a href='?product=" . $item['id_product'] . "'><button>See More ►</button></a>";
                         echo "<p class='category'>";
                         while ($cat = mysqli_fetch_assoc($category)) {
                             echo $cat['name_category'] . " ";

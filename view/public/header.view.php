@@ -18,7 +18,7 @@
         <ul>
             <li class="menu"><a href="?page=home">Home</a></li>
             <li class="menu"><a href="?page=about.us">About us</a></li><br class="br">
-            <li><a href="?page=home"><img id="logo2" src="img/logo/main-logo-small.png" alt="All-natural Artifacts"/></a></li>
+            <li><a href="?page=home"><img id="logo2" src="img/logo/main-logo-small.png" title="All-Natural Artifact" alt="All-natural Artifacts"/></a></li>
             <li class="menu"><a href="?page=catalog">Catalog</a></li>
             <li class="menu"><a href="?page=contact">Contact</a></li><br class="br">
         </ul>

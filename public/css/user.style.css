@@ -1048,8 +1048,8 @@ footer div p a:hover {
 #containercatalog #find {
     flex: 0 0 auto;
     background-color: #472d30;
-    height: 80vh;
-    width: 250px;
+    height: 65vh;
+    width: 280px;
     margin: 50px auto;
     position: relative;
     left: 120px;
@@ -1057,22 +1057,82 @@ footer div p a:hover {
     color: #E26d5c;
 }
 
+#containercatalog #find h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    text-shadow: 1px 1px #472d30;
+    font-size: 4.5em;
+    margin-bottom: 10px;
+    position: relative;
+    bottom: 40px;
+    right: 10px;
+}
+
 #containercatalog #find form div {
     text-align: left;
-    margin: 20px;
+    margin: 15px 20px 40px 20px;
+}
+
+#containercatalog #find form #price p {
+    font-size: 0.8em;
+}
+
+#containercatalog #find form #price input {
+    display: inline-block;
+    width: 60px;
+    padding: 5px;
+    background-color: #472d30;
+    border: 1px solid #723d46;
+    color: #E26d5c;
+    text-align: right;
+}
+
+#containercatalog #find form #price label {
+    font-size: 1.2em;
+}
+
+#containercatalog #find form h4 {
+    font-size: 1.5em;
+    letter-spacing: 2px;
+    text-align: left;
+    margin: 5px 20px 10px 20px;
+    text-transform: uppercase;
+    font-weight: lighter;
+    text-decoration: underline #723d46;
 }
 
 #containercatalog #find form div input[type="checkbox"].demo {
     display: none;
 }
+
 #containercatalog #find form div input[type="checkbox"].demo + label::before {
     content:'';
-    border: 1px solid #E26d5c;
+    border: 1px solid #723d46;
     padding: 0 0.6rem;
     margin-right: 0.3rem;
 }
+
 #containercatalog #find form div input[type="checkbox"].demo:checked + label::before {
-    margin-top: 10px;
+    margin-top: 30px;
+    background-color: #E26d5c;
+}
+
+#containercatalog #find form div label {
+    margin-left: 5px;
+    text-transform: uppercase;
+}
+
+#containercatalog #find form div button {
+    padding: 10px;
+    font-family: 'Bebas Neue', sans-serif;
+    border: 1px solid #723d46;
+    color: #E26d5c;
+    background-color: #472d30;
+    font-size: 1.5em;
+    letter-spacing: 2px;
+}
+
+#containercatalog #find form div button:hover {
+    color: #472d30;
     background-color: #E26d5c;
 }
 
@@ -1084,7 +1144,7 @@ footer div p a:hover {
 }
 
 #catalog .products {
-    width: 80%;
+    width: 75%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -1094,8 +1154,8 @@ footer div p a:hover {
 }
 
 #catalog .products .item {
-    width: 27%;
-    min-height: 420px;
+    width: 250px;
+    min-height: 390px;
     flex: 0 0 auto;
     margin: 3% 1%;
     background-color: #E26d5c;
@@ -1104,8 +1164,8 @@ footer div p a:hover {
 }
 
 #catalog .products .promoted_item {
-    width: 27%;
-    min-height: 420px;
+    width: 250px;
+    min-height: 390px;
     flex: 0 0 auto;
     margin: 2% 1%;
     background-color: #c9cba3;
@@ -1114,14 +1174,14 @@ footer div p a:hover {
 }
 
 #catalog .products .item .img {
-    width: 76%;
+    width: 180px;
     position: relative;
     bottom: 5px;
     box-shadow: 20px -8px 0 1px #472d30;
 }
 
 #catalog .products .promoted_item .img {
-    width: 76%;
+    width: 180px;
     position: relative;
     bottom: 5px;
     box-shadow: 20px -8px 0 1px #472d30;
@@ -1147,26 +1207,12 @@ footer div p a:hover {
     z-index : 2;
 }
 
-#catalog .products .item .descr {
-    height: 60px;
-    font-size: 1.1em;
-    text-align: justify;
-    padding: 0 10%;
-}
-
-#catalog .products .promoted_item .descr{
-    height: 60px;
-    font-size: 1.1em;
-    text-align: justify;
-    padding: 0 10%;
-}
-
 #catalog .products .item a button {
     font-family: 'Bebas Neue', sans-serif;
-    background-color: #472d30;
-    border: none;
+    background-color: #E26d5c;
+    border: 1px solid #723d46;
     font-size: 1.1em;
-    color: #E26d5c;
+    color: #472d30;
     padding: 10px;
     cursor: pointer;
     margin: -35px 0 15px 0;
@@ -1176,7 +1222,8 @@ footer div p a:hover {
 }
 
 #catalog .products .item a button:hover {
-    text-shadow: 2px 2px #472d30;
+    background-color: #472d30;
+    color: #E26d5c;
 }
 
 #catalog .products .item h5 {
@@ -1190,19 +1237,19 @@ footer div p a:hover {
 }
 
 #catalog .products .item .category {
-    padding: 5px;
-    width: 50%;
-    background-color: #472d30;
-    color: #E26d5c;
+    padding: 12px 5px 5px 5px;
+    width: 70%;
+    border-top: 1px solid #472d30;
+    color: #472d30;
     text-transform: uppercase;
 }
 
 #catalog .products .promoted_item a button {
     font-family: 'Bebas Neue', sans-serif;
-    background-color: #472d30;
-    border: none;
+    background-color: #c9cba3;
+    border: 1px solid #723d46;
     font-size: 1.1em;
-    color: #c9cba3;
+    color: #472d30;
     padding: 10px;
     cursor: pointer;
     margin: -35px 0 15px 0;
@@ -1212,7 +1259,8 @@ footer div p a:hover {
 }
 
 #catalog .products .promoted_item a button:hover {
-    text-shadow: 2px 2px #723d46;
+    background-color: #472d30;
+    color: #c9cba3;
 }
 
 #catalog .products .promoted_item h5 {
@@ -1226,10 +1274,10 @@ footer div p a:hover {
 }
 
 #catalog .products .promoted_item .category {
-    padding: 5px;
-    width: 50%;
-    background-color: #472d30;
-    color: #c9cba3;
+    padding: 12px 5px 5px 5px;
+    width: 70%;
+    border-top: 1px solid #472d30;
+    color: #472d30;
     text-transform: uppercase;
 }
 
@@ -1273,4 +1321,37 @@ footer div p a:hover {
 #pagination a:hover {
     background-color: #E26d5c;
     color: #472d30;
+}
+
+#catalog-detail {
+    margin: 80px auto;
+    width: 80%;
+}
+
+#catalog-detail .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 2em 2em;
+    grid-template-areas:
+            "title title title title"
+            "picture picture description description"
+            "picture picture description description";
+}
+
+#catalog-detail .title {
+    grid-area: title;
+    width: 100%;
+    background-color: #472d30;
+    height: 40px;
+}
+
+#catalog-detail .picture {
+    grid-area: picture;
+    width: 100%;
+    background-color: #E26d5c;
+}
+
+#catalog-detail .description {
+    grid-area: description;
 }

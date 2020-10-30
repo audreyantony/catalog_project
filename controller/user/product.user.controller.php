@@ -1,15 +1,14 @@
 <?php
 
 // CALLING MODEL
+include dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'model' . DIRECTORY_SEPARATOR . 'product.user.model.php';
 
 // CONTROLLER CODE
-$sql = 'SELECT * FROM product INNER JOIN product_has_category ON product.id_product = product_has_category.product_id_product INNER JOIN category ON category.id_category = product_has_category.category_id_category WHERE product.id_product = "'.$pageId.'";';
-$requete = mysqli_query($db,$sql);
-$nb = mysqli_num_rows($requete);
+$product = selectTheProduct($pageId, $db);
+$nb = mysqli_num_rows($product);
 
 if($nb===1) {
-    $item =  mysqli_fetch_assoc($requete);
-
+    $item =  mysqli_fetch_assoc($product);
 }else{
     $titre = "Erreur 404";
 }
