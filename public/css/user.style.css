@@ -1042,7 +1042,8 @@ footer div p a:hover {
     justify-content: space-between;
     align-items: start;
     align-content: start;
-    margin-top: 25px;
+    margin-top: -55px;
+    transform: scale(0.9);
 }
 
 #containercatalog #find {
@@ -1155,7 +1156,7 @@ footer div p a:hover {
 
 #catalog .products .item {
     width: 250px;
-    min-height: 390px;
+    min-height: 370px;
     flex: 0 0 auto;
     margin: 3% 1%;
     background-color: #E26d5c;
@@ -1165,7 +1166,7 @@ footer div p a:hover {
 
 #catalog .products .promoted_item {
     width: 250px;
-    min-height: 390px;
+    min-height: 370px;
     flex: 0 0 auto;
     margin: 2% 1%;
     background-color: #c9cba3;
@@ -1227,11 +1228,12 @@ footer div p a:hover {
 }
 
 #catalog .products .item h5 {
-    font-size: 2.2em;
+    font-size: 1.7em;
     font-family: 'Bebas Neue', sans-serif;
     position: relative;
     width: 40%;
-    top: 29px;
+    top: 19px;
+    letter-spacing: 2px;
     right: 65px;
     text-shadow: 1px 1px #472d30;
 }

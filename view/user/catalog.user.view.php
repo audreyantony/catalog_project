@@ -14,7 +14,7 @@
             <h4>Price range :</h4>
             <div id="price">
                 <p>See the products between :</p><br>
-                <input type="text" name="minimum" id="min" value="0"><label for="min"> € & </label>
+                <input type="text" name="minimum" id="min" value="0"><label for="min"> € &nbsp;& &nbsp;&nbsp; </label>
                 <input type="text" name="maximum" id="max" value="<?=$maxPrice['price_product']?>"><label for="min"> €</label>
             </div>
             <div>
