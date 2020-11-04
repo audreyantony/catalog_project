@@ -9,16 +9,6 @@ $category = selectAllCategory($db);
 
 $maxPrice = selectMaxPrice($db);
 
-/*if (isset($_POST['search'])){
-    if (!empty($_POST['category'])){
-        foreach ($_POST['category'] as $cat){
-            echo $cat."<br>";
-        }
-    }
-    echo "<br>".$_POST['minimum']."<br>";
-    echo $_POST['maximum']."<br>";
-}*/
-
 if (isset($_GET['catalog'])){
     $currentPage = $_GET['catalog'];
 } else {
@@ -27,7 +17,20 @@ if (isset($_GET['catalog'])){
 
 $productByPage = 6;
 $allProducts = selectTotalProducts($db);
-$product = selectAllProducts($productByPage, $currentPage, $db);
+
+if (isset($_POST['search'])){
+    
+    if (!empty($_POST['category'])){
+        foreach ($_POST['category'] as $cat){
+            echo $cat."<br>";
+        }
+    }
+    echo "<br>".$_POST['minimum']."<br>";
+    echo $_POST['maximum']."<br>";
+} else {
+    $product = selectAllProducts($productByPage, $currentPage, $db);
+}
+
 $productNumber = mysqli_num_rows($allProducts);
 
 // CALLING VIEW
