@@ -11,28 +11,24 @@ $maxPrice = selectMaxPrice($db);
 
 $productByPage = 6;
 
-if (isset($_GET['search'])){
-    header("Location : index.php?page=catalog&catalog=4&search=on&");
-}
-
-/*if (isset($_GET['search'])){
+if (isset($_POST['search'])){
     $arrayCategory = [];
-    if (!empty($_GET['category'])){
+    if (!empty($_POST['category'])){
         $i=0;
-        foreach ($_GET['category'] as $cat){
+        foreach ($_POST['category'] as $cat){
             $arrayCategory[$i]= $cat;
             $i++;
         }
     }
-    if (empty($_GET['minimum'])){
+    if (empty($_POST['minimum'])){
         $min = 0;
     } else {
-        $min = $_GET['minimum'];
+        $min = $_POST['minimum'];
     }
-    if (empty($_GET['maximum'])){
+    if (empty($_POST['maximum'])){
         $max = $maxPrice['price_product'];
     } else {
-        $max = $_GET['maximum'];
+        $max = $_POST['maximum'];
     }
 
     if (isset($_GET['catalog'])){
@@ -45,7 +41,7 @@ if (isset($_GET['search'])){
     $product = selectSomeProducts($min, $max, $arrayCategory, $productByPage, $currentPage, $db);
     $productNumber = mysqli_num_rows($someProducts);
 
-} else {*/
+} else {
 
     if (isset($_GET['catalog'])){
         $currentPage = $_GET['catalog'];
@@ -56,7 +52,7 @@ if (isset($_GET['search'])){
     $allProducts = selectTotalProducts($db);
     $product = selectAllProducts($productByPage, $currentPage, $db);
     $productNumber = mysqli_num_rows($allProducts);
-//}
+}
 
 
 
