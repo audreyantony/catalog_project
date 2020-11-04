@@ -1,7 +1,7 @@
 <section id="containercatalog">
     <section id="find">
         <h3>Search :</h3>
-        <form action="" method="post">
+        <form action="" method="get">
             <h4>Category :</h4>
             <div>
                 <?php
@@ -18,7 +18,7 @@
                 <input type="text" name="maximum" id="max" value="<?=$maxPrice['price_product']?>"><label for="min"> €</label>
             </div>
             <div>
-                <button type="submit" name="search"> GO ► </button>
+                <button type="submit"> GO ► </button>
             </div>
         </form>
 
