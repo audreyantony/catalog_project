@@ -43,7 +43,7 @@ function selectAllCategory($db){
     return mysqli_query($db, $query);
 }
 
-function pagination($productNumber, $currentPage, $productByPage = 6){
+function pagination($productNumber, $currentPage, $productByPage = 6, $url){
 
     $page = ceil($productNumber / $productByPage);
     $pagination = "";
@@ -132,8 +132,6 @@ function selectTotalSomeProducts($minPrice, $maxPrice, $catArray, $db){
             $i++;
         }
     }
-
     $query .= " ;";
-    echo $query;
     return mysqli_query($db, $query);
 }

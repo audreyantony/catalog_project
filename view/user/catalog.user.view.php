@@ -1,7 +1,8 @@
 <section id="containercatalog">
     <section id="find">
         <h3>Search :</h3>
-        <form action="" method="post">
+        <form action="?page=catalog" method="get">
+            <input type="text" hidden name="page" value="catalog">
             <h4>Category :</h4>
             <div>
                 <?php
@@ -18,7 +19,8 @@
                 <input type="text" name="maximum" id="max" value="<?=$maxPrice['price_product']?>"><label for="min"> €</label>
             </div>
             <div>
-                <button type="submit" name="search"> GO ► </button>
+                <input type="text" hidden name="search" value="yes">
+                <button type="submit"> GO ► </button>
             </div>
         </form>
 
@@ -67,7 +69,7 @@
         </div>
         <div id="pagination">
             <?php
-            echo pagination($productNumber, $currentPage, 6);
+            echo pagination($productNumber, $currentPage, 6, $url);
             ?>
         </div>
 

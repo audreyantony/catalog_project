@@ -11,31 +11,26 @@ $maxPrice = selectMaxPrice($db);
 
 $productByPage = 6;
 
-if (isset($_POST['search'])){
+if (isset($_GET['search'])){
     $arrayCategory = [];
-    if (!empty($_POST['category'])){
-        $i=0;
-        foreach ($_POST['category'] as $cat){
-            $arrayCategory[$i]= $cat;
+    if (!empty($_GET['category'])) {
+        $i = 0;
+        foreach ($_GET['category'] as $cat) {
+            $arrayCategory[$i] = $cat;
             $i++;
         }
     }
-    if (empty($_POST['minimum'])){
-        $min = 0;
-    } else {
-        $min = $_POST['minimum'];
-    }
-    if (empty($_POST['maximum'])){
-        $max = $maxPrice['price_product'];
-    } else {
-        $max = $_POST['maximum'];
-    }
 
-    if (isset($_GET['catalog'])){
-        $currentPage = $_GET['catalog'];
-    } else {
-        $currentPage = 1;
+    $min = empty($_GET['minimum']) ? 0 : $_GET['minimum'];
+    $max = empty($_GET['maximum']) ? $maxPrice['price_product'] : $_GET['maximum'];
+
+    $currentPage = isset($_GET['catalog']) ? $_GET['catalog'] : 1;
+
+    $url = "";
+    foreach ($arrayCategory as $cat){
+        $url .= "&category[".$cat."]=".$cat;
     }
+    $url .= "&minimum=".$min."&maximum=".$max."&search=yes";
 
     $someProducts = selectTotalSomeProducts($min, $max, $arrayCategory,$db);
     $product = selectSomeProducts($min, $max, $arrayCategory, $productByPage, $currentPage, $db);
@@ -43,11 +38,7 @@ if (isset($_POST['search'])){
 
 } else {
 
-    if (isset($_GET['catalog'])){
-        $currentPage = $_GET['catalog'];
-    } else {
-        $currentPage = 1;
-    }
+    $currentPage = isset($_GET['catalog']) ? $_GET['catalog'] : 1;
 
     $allProducts = selectTotalProducts($db);
     $product = selectAllProducts($productByPage, $currentPage, $db);
