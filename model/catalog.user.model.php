@@ -43,7 +43,7 @@ function selectAllCategory($db){
     return mysqli_query($db, $query);
 }
 
-function pagination($productNumber, $currentPage, $productByPage = 6, $url){
+function pagination($productNumber, $currentPage, $productByPage = 6, $text){
 
     $page = ceil($productNumber / $productByPage);
     $pagination = "";
@@ -57,7 +57,7 @@ function pagination($productNumber, $currentPage, $productByPage = 6, $url){
             if($i==$currentPage){
                 $pagination .= "";
             } else {
-                $pagination .= "<a href=\"?page=catalog&catalog=".($currentPage-1)."\">&nbsp;&nbsp;◄ previous&nbsp;&nbsp;</a>";
+                $pagination .= "<a href=\"?page=catalog&catalog=".($currentPage-1).$text."\">&nbsp;&nbsp;◄ previous&nbsp;&nbsp;</a>";
             }
         }
         if ($i=$currentPage) {
@@ -67,7 +67,7 @@ function pagination($productNumber, $currentPage, $productByPage = 6, $url){
             if ($i==$currentPage){
                 $pagination .= "";
             } else {
-                $pagination .= "<a href=\"?page=catalog&catalog=".($currentPage+1)."\">&nbsp;&nbsp;next ►&nbsp;&nbsp;</a>";
+                $pagination .= "<a href=\"?page=catalog&catalog=".($currentPage+1).$text."\">&nbsp;&nbsp;next ►&nbsp;&nbsp;</a>";
             }
         }
     }

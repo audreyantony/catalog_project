@@ -11,6 +11,8 @@ $maxPrice = selectMaxPrice($db);
 
 $productByPage = 6;
 
+$url = "";
+
 if (isset($_GET['search'])){
     $arrayCategory = [];
     if (!empty($_GET['category'])) {
@@ -26,7 +28,7 @@ if (isset($_GET['search'])){
 
     $currentPage = isset($_GET['catalog']) ? $_GET['catalog'] : 1;
 
-    $url = "";
+
     foreach ($arrayCategory as $cat){
         $url .= "&category[".$cat."]=".$cat;
     }
