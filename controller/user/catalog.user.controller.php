@@ -13,7 +13,7 @@ $productByPage = 6;
 
 $url = "";
 
-if (isset($_GET['search'])){
+if (isset($_GET['search']) && $_GET['search'] === "yes"){
     $arrayCategory = [];
     if (!empty($_GET['category'])) {
         $i = 0;

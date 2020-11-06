@@ -1036,14 +1036,16 @@ footer div p a:hover {
 /* CATALOG PAGE */
 
 #containercatalog {
+    width: 95%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
     align-items: start;
     align-content: start;
-    margin-top: -55px;
+    margin-top: -65px;
     transform: scale(0.9);
+    margin-left: 7%;
 }
 
 #containercatalog #find {
@@ -1053,7 +1055,6 @@ footer div p a:hover {
     width: 280px;
     margin: 50px auto;
     position: relative;
-    left: 120px;
     top: 40px;
     color: #E26d5c;
 }
@@ -1146,20 +1147,20 @@ footer div p a:hover {
 }
 
 #catalog .products {
-    width: 75%;
+    width: 90%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    align-content: center
+    justify-content: start;
+    align-items: start;
+    align-content: start;
 }
 
 #catalog .products .item {
     width: 250px;
     min-height: 370px;
     flex: 0 0 auto;
-    margin: 3% 1%;
+    margin: 3%;
     background-color: #E26d5c;
     color: #472d30;
     padding: 15px;
