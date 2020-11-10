@@ -913,6 +913,43 @@ footer div p a:hover {
     height: 320px;
 }
 
+.custom-popup .leaflet-popup-content-wrapper {
+    background:#472d30;
+    color:#E26d5c;
+    font-size:16px;
+    line-height:24px;
+    border-radius: 0;
+}
+
+.custom-popup .leaflet-popup-content-wrapper a {
+    color: rgba(226, 109, 92, 0.1);
+}
+
+.custom-popup .leaflet-popup-content-wrapper .leaflet-popup-content p {
+    text-transform: uppercase;
+    font-weight: lighter;
+    font-size: 0.9em;
+}
+
+.custom-popup .leaflet-popup-tip-container {
+    width:0;
+    height:0;
+}
+
+.custom-popup .leaflet-popup-tip {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.custom-popup .leaflet-popup a.leaflet-popup-close-button {
+    color: #723d46;
+}
+
+.custom-popup .leaflet-popup a.leaflet-popup-close-button:hover {
+    color: #E26d5c;
+}
+
 @media screen and (min-width: 1200px) and (max-width: 1400px){
     #social-media a img {
         right: 30%;
