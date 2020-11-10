@@ -37,7 +37,7 @@
         </div>
     </div>
     <div class="shop-map">
-        <div id="leaflet-map">
+        <div class="custom-popup" id="leaflet-map">
         </div>
     </div>
 </section>

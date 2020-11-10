@@ -4,7 +4,7 @@ var homeMadeIcon = L.icon({
     iconUrl: 'img/icon/map.png',
     iconSize:     [38, 42],
     iconAnchor:   [14, 40],
-    popupAnchor:  [6, -6]
+    popupAnchor:  [6, -36]
 });
 
 L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png', {
