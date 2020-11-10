@@ -7,6 +7,10 @@ var homeMadeIcon = L.icon({
     popupAnchor:  [6, -36]
 });
 
+function onClick() {
+    map.panTo(this.getLatLng())
+}
+
 L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png', {
     maxZoom: 17
 }).addTo(map);
@@ -17,6 +21,7 @@ fetch('../controller/fetch.leaflet.controller.php').then(function (response){
     let shops = JSON.parse(data);
 
     for (let i = 0 ; i < shops.length ; i++){
-        L.marker([shops[i].lat_shop, shops[i].long_shop], {icon: homeMadeIcon}).bindPopup("<p> " + shops[i].name_shop + " <br> " + shops[i].description_shop + " </p>").addTo(map);
+        let marker = L.marker([shops[i].lat_shop, shops[i].long_shop], {icon: homeMadeIcon}).bindPopup("<p> " + shops[i].name_shop + " <br> " + shops[i].description_shop + " </p>").on('click', onClick);
+        marker.addTo(map);
     }
 });

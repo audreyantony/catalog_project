@@ -27,12 +27,21 @@ LIMIT 3";
 
 function fetchPOTD($db){
     $query = "SELECT id_product, name_product as name, 
-    LEFT(description_product, 60) as descr 
-    FROM product 
+    LEFT(description_product, 33) as descr,
+    GROUP_CONCAT(
+        DISTINCT img.name_img SEPARATOR 'µµ'
+    ) AS img,
+    GROUP_CONCAT(
+        DISTINCT img.alt_img SEPARATOR 'µµ'
+    ) AS alt
+FROM
+    product
+JOIN product_has_img ON id_product = product_id_product_has_img
+JOIN img ON img_id_product_has_img = id_img
     WHERE promoted_product = 1 
+    GROUP BY id_product
     LIMIT 1;";
-    $result = mysqli_query($db, $query);
-    return mysqli_fetch_assoc($result);
+    return mysqli_query($db, $query);
 }
 
 function dateDiff($start, $end){

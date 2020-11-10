@@ -34,12 +34,23 @@
         ?>
     </div>
     <div class="potd">
-        <div class="bta">
-            <h3>Today's Pick :</h3>
-            <h4><?=$POTD['name']?></h4>
-            <p><?=$POTD['descr']?> ...</p>
-            <a href="?product=<?=$POTD['id_product']?>"><button class="asb">Read more</button></a>
-        </div>
-        <div></div>
+        <?php
+        while ($item = mysqli_fetch_assoc($POTD)){
+            if(!empty($item["img"])) {
+                $imgName = explode("µµ", $item["img"]);
+                $imgAlt = explode("µµ", $item["alt"]);}
+            $title = explode("-",$item['name']);
+            ?>
+            <div class="bta">
+                <h3>Today's Pick :</h3>
+                <img src="img/<?=isset($imgName[1]) ? $imgName[1] : $imgName[0]?>" alt="<?=isset($imgAlt[1]) ? $imgAlt[1] : $imgAlt[0]?>">
+                <h4><?=$title[0]?></h4>
+                <p><?=$item['descr']?> ...</p>
+                <a href="?product=<?=$item['id_product']?>"><button class="asb">Read more</button></a>
+            </div>
+            <div></div>
+        <?php
+        }
+        ?>
     </div>
 </section>

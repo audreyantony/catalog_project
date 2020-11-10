@@ -557,14 +557,26 @@ footer div p a:hover {
 
 #clearance-potd .potd div h4 {
     position: relative;
-    bottom: 19px;
+    bottom: 119px;
+    left: 55px;
+    text-transform: uppercase;
     font-size: 0.8em;
     margin: 0 10px;
 }
 
+#clearance-potd .potd div img {
+    width: 100px;
+    opacity: 0.9;
+    position: relative;
+    bottom: 18px;
+    right: 64px;
+}
+
 #clearance-potd .potd div p {
     position: relative;
-    bottom: 19px;
+    bottom: 115px;
+    left: 110px;
+    width: 120px;
     font-size: 0.7em;
     margin: 0 10px -15px 10px;
 }
@@ -574,6 +586,9 @@ footer div p a:hover {
     padding: 5px 10px;
     margin-top: 15px;
     cursor: pointer;
+    position: relative;
+    bottom: 110px;
+    left: 60px;
 }
 
 @media screen and (min-width: 1080px) and (max-width: 1370px){
