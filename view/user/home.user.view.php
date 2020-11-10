@@ -11,31 +11,25 @@
 
 <section id="clearance-potd">
     <div class="clearance">
-        <div class="burgundy">
-            <h3><?=$C1['discount']?> % <span>on</span></h3>
-            <h4><?=$C1['name']?> ...</h4>
-            <p><?=$C1['descr']?> ...</p>
-            <a href="?product=<?=$C1['id_product']?>"><button class="anis">Read more</button></a>
-        </div>
-        <div class="terracotta">
-            <h3><?=$C2['discount']?> % <span>on</span></h3>
-            <h4><?=$C2['name']?> ...</h4>
-            <p><?=$C2['descr']?> ...</p>
-            <a href="?product=<?=$C2['id_product']?>"><button class="salmon">Read more</button></a>
-        </div>
-        <div class="anis">
-            <h3><?=$C3['discount']?> % <span>on</span></h3>
-            <h4><?=$C3['name']?> ...</h4>
-            <p><?=$C3['descr']?> ...</p>
-            <a href="?product=<?=$C3['id_product']?>"><button class="burgundy">Read more</button></a>
-        </div>
+        <?php
+        while ($item = mysqli_fetch_assoc($clearance)){
+            ?>
+            <div class="bta">
+                <h3><?=$item['discount']?> % <span>on</span></h3>
+                <h4><?=$item['name']?> ...</h4>
+                <p><?=$item['descr']?> ...</p>
+                <a href="?product=<?=$item['id_product']?>"><button class="asb">Read more</button></a>
+            </div>
+        <?php
+        }
+        ?>
     </div>
     <div class="potd">
-        <div class="burgundy">
+        <div class="bta">
             <h3>Today's Pick :</h3>
             <h4><?=$POTD['name']?></h4>
             <p><?=$POTD['descr']?> ...</p>
-            <a href="?product=<?=$POTD['id_product']?>"><button class="anis">Read more</button></a>
+            <a href="?product=<?=$POTD['id_product']?>"><button class="asb">Read more</button></a>
         </div>
         <div></div>
     </div>

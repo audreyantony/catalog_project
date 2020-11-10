@@ -417,28 +417,42 @@ footer div p a:hover {
     background-size: contain;
 }
 
-.terracotta {
+.bta:nth-child(2) {
     background-color: #E26d5c;
     color: #723d46;
     border: 2px solid #E26d5c;
     text-shadow: 1px 1px #E26d5c;
 }
 
-.salmon {
+.bta:nth-child(2) .asb {
     background-color: #723d46;
     color: #E26d5c;
     border: 2px solid #723d46;
     text-shadow: 1px 1px #723d46;
 }
 
-.anis {
+.bta:nth-child(3) {
     background-color: #c9cba3;
     color: #472d30;
     border: 2px solid #c9cba3;
     text-shadow: 1px 1px #c9cba3;
 }
 
-.burgundy {
+.bta:nth-child(1) .asb {
+    background-color: #c9cba3;
+    color: #472d30;
+    border: 2px solid #c9cba3;
+    text-shadow: 1px 1px #c9cba3;
+}
+
+.bta:nth-child(1) {
+     background-color: #472d30;
+     color: #c9cba3;
+     border: 2px solid #472d30;
+     text-shadow: 1px 1px #472d30;
+ }
+
+.bta:nth-child(3) .asb {
     background-color: #472d30;
     color: #c9cba3;
     border: 2px solid #472d30;
