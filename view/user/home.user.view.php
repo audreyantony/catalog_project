@@ -13,12 +13,21 @@
     <div class="clearance">
         <?php
         while ($item = mysqli_fetch_assoc($clearance)){
-            ?>
+            if(!empty($item["img"])) {
+                $imgName = explode("µµ", $item["img"]);
+                $imgAlt = explode("µµ", $item["alt"]);}
+            $title = explode("-",$item['name']);
+            $newPrice = $item['price_product']-($item['price_product']*($item['discount']/100));
+            $now = time();
+            $end = strtotime($item['end']);
+            $days = dateDiff($now, $end);;?>
             <div class="bta">
                 <h3><?=$item['discount']?> % <span>on</span></h3>
-                <h4><?=$item['name']?> ...</h4>
-                <p><?=$item['descr']?> ...</p>
+                <img src="img/<?=isset($imgName[1]) ? $imgName[1] : $imgName[0]?>" alt="<?=isset($imgAlt[1]) ? $imgAlt[1] : $imgAlt[0]?>">
+                <h4><?=$title[0]?></h4>
+                <h5>Now at <br> <span>| <?=$newPrice?> € |</span><br>In place of <?=$item['price_product']?> €</h5>
                 <a href="?product=<?=$item['id_product']?>"><button class="asb">Read more</button></a>
+                <p>Ends in <?=$days['day']?> day<?=$days['day']>=1? "s" : ""?></p>
             </div>
         <?php
         }
