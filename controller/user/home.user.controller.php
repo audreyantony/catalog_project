@@ -5,9 +5,7 @@ include dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'model' . DIRECTORY_SE
 
 
 // CONTROLLER CODE
-$C1 = fetchClearance1($db);
-$C2 = fetchClearance2($db);
-$C3 = fetchClearance3($db);
+$clearance = fetchClearance($db);
 
 $POTD = fetchPOTD($db);
 

@@ -384,8 +384,8 @@ footer div p a:hover {
 }
 
 #clearance-potd .clearance div {
-    width: 130px;
-    height: 220px;
+    width: 140px;
+    height: 310px;
     flex: 0 0 auto;
     margin: 10px;
     position: relative;
@@ -417,28 +417,69 @@ footer div p a:hover {
     background-size: contain;
 }
 
-.terracotta {
+.bta:nth-child(2) {
     background-color: #E26d5c;
     color: #723d46;
     border: 2px solid #E26d5c;
     text-shadow: 1px 1px #E26d5c;
 }
 
-.salmon {
+.bta:nth-child(2) .asb {
     background-color: #723d46;
     color: #E26d5c;
     border: 2px solid #723d46;
     text-shadow: 1px 1px #723d46;
 }
 
-.anis {
+.bta:nth-child(2) p {
+    background-color: #E26d5c;
+    color: #472d30;
+    font-weight: lighter;
+    text-transform: uppercase;
+    text-shadow: none;
+    padding: 3px 0;
+}
+
+.bta:nth-child(1) p {
+    background-color: #472d30;
+    color: #c9cba3;
+    font-weight: lighter;
+    text-transform: uppercase;
+    text-shadow: none;
+    padding: 3px 0;
+}
+
+.bta:nth-child(3) p {
+    background-color: #c9cba3;
+    color: #472d30;
+    font-weight: lighter;
+    text-transform: uppercase;
+    text-shadow: none;
+    padding: 3px 0;
+}
+
+.bta:nth-child(3) {
     background-color: #c9cba3;
     color: #472d30;
     border: 2px solid #c9cba3;
     text-shadow: 1px 1px #c9cba3;
 }
 
-.burgundy {
+.bta:nth-child(1) .asb {
+    background-color: #c9cba3;
+    color: #472d30;
+    border: 2px solid #c9cba3;
+    text-shadow: 1px 1px #c9cba3;
+}
+
+.bta:nth-child(1) {
+     background-color: #472d30;
+     color: #c9cba3;
+     border: 2px solid #472d30;
+     text-shadow: 1px 1px #472d30;
+ }
+
+.bta:nth-child(3) .asb {
     background-color: #472d30;
     color: #c9cba3;
     border: 2px solid #472d30;
@@ -461,20 +502,47 @@ footer div p a:hover {
 
 #clearance-potd .clearance div h4 {
     position: relative;
-    bottom: 30px;
+    bottom: 40px;
+    height: 35px;
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: lighter;
+    font-size: 0.9em;
+}
+
+#clearance-potd .clearance div img {
+    position: relative;
+    bottom: 35px;
+    width: 120px;
+    opacity: 0.9;
+}
+
+#clearance-potd .clearance div h5 {
+    position: relative;
+    bottom: 35px;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 0.5em;
+    letter-spacing: 2px;
 }
 
 #clearance-potd .clearance div p {
     position: relative;
-    bottom: 25px;
-    font-size: 0.7em;
-    padding: 0 10px;
+    bottom: 320px;
+    font-size: 0.6em;
+    width: 110px;
+}
+
+#clearance-potd .clearance div h5 span {
+    font-size: 2.6em;
+    font-family: 'Bebas Neue', sans-serif;
 }
 
 #clearance-potd .clearance div a button {
     font-family: 'Bebas Neue', sans-serif;
     padding: 10px;
-    margin-top:-5px;
+    position: relative;
+    bottom: 30px;
     cursor: pointer;
 }
 
@@ -489,14 +557,26 @@ footer div p a:hover {
 
 #clearance-potd .potd div h4 {
     position: relative;
-    bottom: 19px;
+    bottom: 119px;
+    left: 55px;
+    text-transform: uppercase;
     font-size: 0.8em;
     margin: 0 10px;
 }
 
+#clearance-potd .potd div img {
+    width: 100px;
+    opacity: 0.9;
+    position: relative;
+    bottom: 18px;
+    right: 64px;
+}
+
 #clearance-potd .potd div p {
     position: relative;
-    bottom: 19px;
+    bottom: 115px;
+    left: 110px;
+    width: 120px;
     font-size: 0.7em;
     margin: 0 10px -15px 10px;
 }
@@ -506,6 +586,9 @@ footer div p a:hover {
     padding: 5px 10px;
     margin-top: 15px;
     cursor: pointer;
+    position: relative;
+    bottom: 110px;
+    left: 60px;
 }
 
 @media screen and (min-width: 1080px) and (max-width: 1370px){
