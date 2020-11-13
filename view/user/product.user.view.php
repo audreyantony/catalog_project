@@ -5,7 +5,7 @@ if (isset($item)) {
         <div class="grid-container">
             <div class="title">
                 <h2><?= $item['name_product'] ?></h2>
-                <p><?= $item['price_product'] ?> €</p>
+                <p><?= $price ?></p>
             </div>
             <div class="picture"><?php
                 if(!empty($item["name_img"])) {

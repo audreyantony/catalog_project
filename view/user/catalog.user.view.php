@@ -35,34 +35,27 @@
                     if ($item['promoted_product'] == 1) {
                         echo "<div class='promoted_item'>";
                         echo "<h2><img src=\"img/icon/thumb.png\" alt=\"thumb-up\"> " . $item['name_product'] . "</h2>";
-                        echo '<img class="img" src="img/' . $picture['name_img'] . '" alt="' . $picture['alt_img'] . '">';
-                        if ($item['discount_product'] > 0) {
-                            echo '<H5>DISCOUNT</H5>';
-                        } else {
-                            echo "<h5>" . $item['price_product'] . " € </h5>";
-                        }
-                        echo "<a href='?product=" . $item['id_product'] . "'><button>See More ►</button></a>";
-                        echo "<p class='category'>";
-                        while ($cat = mysqli_fetch_assoc($category)) {
-                            echo $cat['name_category'] . " ";
-                        }
-                        echo "</p></div>";
-                    } else if ($item['promoted_product'] == 0) {
+                    } else {
                         echo "<div class='item'>";
                         echo "<h2>" . $item['name_product'] . "</h2>";
-                        echo "<img class=\"img\" src=\"img/" . $picture['name_img'] . "\" alt=\"" . $picture['alt_img'] . "\">";
-                        if ($item['discount_product'] > 0) {
-                            echo '<H5>DISCOUNT</H5>';
-                        } else {
-                            echo "<h5>" . $item['price_product'] . " € </h5>";
-                        }
-                        echo "<a href='?product=" . $item['id_product'] . "'><button>See More ►</button></a>";
-                        echo "<p class='category'>";
-                        while ($cat = mysqli_fetch_assoc($category)) {
-                            echo $cat['name_category'] . " ";
-                        }
-                        echo "</p></div>";
                     }
+                    echo '<img class="img" src="img/' . $picture['name_img'] . '" alt="' . $picture['alt_img'] . '">';
+                    if ($item['discount_product'] > 0) {
+                        echo '<h5 class="discount">| ' . ($item['price_product'] - ($item['price_product'] * ($item['discount_product'] / 100))) . ' € |</h5>';
+                    } else {
+                        echo "<h5>" . $item['price_product'] . " € </h5>";
+                    }
+                    echo "<a href='?product=" . $item['id_product'] . "'><button>See More ►</button></a>";
+                    if ($item['discount_product'] > 0) {
+                        echo '<span>IPO ' . $item['price_product'] . ' €</span>';
+                    } else {
+                        echo '<span></span>';
+                    }
+                    echo "<p class='category'>";
+                    while ($cat = mysqli_fetch_assoc($category)) {
+                        echo $cat['name_category'] . " ";
+                    }
+                    echo "</p></div>";
                 }
             }
             ?>
@@ -75,9 +68,3 @@
 
     </section>
 </section>
-
-<script type="text/javascript">
-    function dicountedPrice(price, discount) {
-        return price - (price * discount / 100);
-    }
-</script>

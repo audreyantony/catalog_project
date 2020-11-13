@@ -9,6 +9,7 @@ $nb = mysqli_num_rows($product);
 
 if($nb===1) {
     $item =  mysqli_fetch_assoc($product);
+    $price = $item['discount_product'] ?($item['price_product'] - ($item['price_product'] * ($item['discount_product'] / 100))) . " €  <span>" : $item['price_product'] . " €  ";
 }else{
     $error = "Erreur 404";
 }

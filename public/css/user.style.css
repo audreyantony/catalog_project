@@ -1360,6 +1360,36 @@ footer div p a:hover {
     text-shadow: 1px 1px #472d30;
 }
 
+#catalog .products .item span {
+    font-size: 0.8em;
+    letter-spacing: 2px;
+    height: 15px;
+    margin-top: -15px;
+    margin-bottom: 5px;
+    position: relative;
+    bottom: 15px;
+    right: 60px;
+    display: block;
+}
+#catalog .products .item .discount {
+    font-size: 1.4em;
+}
+
+#catalog .products .promoted_item span {
+    font-size: 0.8em;
+    letter-spacing: 2px;
+    height: 15px;
+    margin-top: -15px;
+    margin-bottom: 5px;
+    position: relative;
+    bottom: 15px;
+    right: 60px;
+    display: block;
+}
+#catalog .products .promoted_item .discount {
+    font-size: 1.4em;
+}
+
 #catalog .products .item .category {
     padding: 12px 5px 5px 5px;
     width: 70%;
