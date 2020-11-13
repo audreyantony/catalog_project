@@ -1290,7 +1290,7 @@ footer div p a:hover {
     width: 250px;
     min-height: 370px;
     flex: 0 0 auto;
-    margin: 2% 1%;
+    margin: 3%;
     background-color: #c9cba3;
     color: #472d30;
     padding: 15px;
@@ -1450,17 +1450,21 @@ footer div p a:hover {
 #catalog-detail {
     margin: 80px auto;
     width: 80%;
+    z-index: 3;
 }
 
 #catalog-detail .grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
     gap: 2em 2em;
     grid-template-areas:
-            "title title title title"
-            "picture picture description description"
-            "picture picture description description";
+            "title title title title title"
+            "picture picture picture description description"
+            "picture picture picture description description"
+            "picture picture picture description description"
+            "picture picture picture description description"
+            "picture picture picture description description";
 }
 
 #catalog-detail .title {
@@ -1468,7 +1472,6 @@ footer div p a:hover {
     width: 100%;
     background-color: #472d30;
     height: 40px;
-
 }
 
 #catalog-detail .title h2 {
@@ -1500,17 +1503,18 @@ footer div p a:hover {
     grid-area: picture;
     width: 100%;
     background-color: #E26d5c;
-    margin-top: -70px;
+    margin-top: -20px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     align-content: space-around;
 }
 
 #catalog-detail .picture .img {
-    width: 42%;
+    width: 44%;
+    min-width: 300px;
     margin: 3%;
     flex: 0 0 auto;
     border: #723d46;
@@ -1520,7 +1524,9 @@ footer div p a:hover {
     grid-area: description;
     width: 100%;
     background-color: #472d30;
-    margin-top: -70px;
+    margin-top: -20px;
+    position: relative;
+    min-height: 450px;
 }
 
 #catalog-detail .description p {
@@ -1529,6 +1535,7 @@ footer div p a:hover {
     font-size: 1.5em;
     font-weight: lighter;
     text-align: justify;
+    z-index: 0;
 }
 
 #catalog-detail .description h5 {
@@ -1536,16 +1543,120 @@ footer div p a:hover {
     color: #E26d5c;
     text-transform: uppercase;
     margin: 15px auto;
-    width: 20%;
+    padding: 10px 0;
+    width: 40%;
     font-weight: lighter;
     display: inline-block;
+    position: absolute;
+    bottom: 45px;
+    left: 30%;
+    text-align: center;
 }
 
 #catalog-detail .description h6 {
     font-weight: lighter;
     color: #E26d5c;
     letter-spacing: 3px;
-    padding: 10px;
-    width: 90%;
+    padding: 10px 0;
+    width: 80%;
     border-top: 1px solid #723d46;
+    position: absolute;
+    bottom: 5px;
+    left: 10%;
+    text-align: center;
+}
+
+/* 404 */
+
+#error {
+    width: 80%;
+}
+
+#error img {
+    margin-top: 50px;
+    width: 100%;
+    max-width: 400px;
+}
+
+#error p {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5em;
+    color: #472d30;
+    margin: 50px auto;
+}
+
+#error button {
+    padding: 10px 15px;
+    background-color: #E26d5c;
+    color: #472d30;
+    font-size: 1.6em;
+    font-family: 'Bebas Neue', sans-serif;
+    border: none;
+    letter-spacing: 2px;
+}
+
+#error button:hover {
+    cursor: pointer;
+}
+
+/* LIGHTBOX */
+
+
+
+body.lightbox:before {
+    content: "";
+    background: rgba(71, 45, 48, 0.9);
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#floatingGallery {
+    display: none;
+    position: fixed;
+    margin: auto;
+    top: 100px;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+#galleryPicture {
+    display: inline-block;
+    margin: 200px auto;
+    width: 500px;
+}
+
+#leftArrow {
+    position: absolute;
+    top: 35vh;
+    left: 0;
+    width: 5%;
+    background-color: #E26d5c;
+    padding: 25px 10px;
+}
+
+#rightArrow {
+    position: absolute;
+    top: 35vh;
+    right: 0;
+    width: 5%;
+    background-color: #E26d5c;
+    padding: 25px 10px;
+}
+
+#floatingGallery button {
+    position: absolute;
+    top: -100px;
+    right: 0;
+    padding: 20px;
+    background-color: #E26d5c;
+    color: #472d30;
+    font-size: 1.6em;
+    border: none;
 }

@@ -10,7 +10,7 @@ $nb = mysqli_num_rows($product);
 if($nb===1) {
     $item =  mysqli_fetch_assoc($product);
 }else{
-    $titre = "Erreur 404";
+    $error = "Erreur 404";
 }
 
 // CALLING VIEW
