@@ -1,5 +1,6 @@
 <?php
 
+// CLEARANCE PRODUCTS (3)
 function fetchClearance($db){
     $query = "SELECT
     id_product,
@@ -25,6 +26,7 @@ LIMIT 3";
     return mysqli_query($db, $query);
 }
 
+// PRODUCT OF THE DAY (1)
 function fetchPOTD($db){
     $query = "SELECT id_product, name_product as name, 
     LEFT(description_product, 33) as descr,
@@ -44,8 +46,9 @@ JOIN img ON img_id_product_has_img = id_img
     return mysqli_query($db, $query);
 }
 
+// DATE DIFFERENCE FOR PRODUCTS IN CLEARANCE SECTION
 function dateDiff($start, $end){
-    $diff = abs($start - $end); // abs pour avoir la valeur absolute, ainsi éviter d'avoir une différence négative
+    $diff = abs($start - $end);
     $days = array();
 
     $tmp = $diff;

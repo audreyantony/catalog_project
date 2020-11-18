@@ -1,4 +1,6 @@
+<!-- CATALOG PAGE -->
 <section id="containercatalog">
+    <!-- SEARCH BAR -->
     <section id="find">
         <h3>Search :</h3>
         <form action="?page=catalog" method="get">
@@ -25,6 +27,7 @@
         </form>
 
     </section>
+    <!-- PRODUCTS DISPLAY -->
     <section id="catalog">
         <div class="products">
             <?php
@@ -60,11 +63,11 @@
             }
             ?>
         </div>
+        <!-- PAGING -->
         <div id="pagination">
             <?php
-            echo pagination($productNumber, $currentPage, 6, $url);
+            echo pagination($productNumber, $currentPage, $url, 6);
             ?>
         </div>
-
     </section>
 </section>

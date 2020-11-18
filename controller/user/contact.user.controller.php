@@ -4,14 +4,18 @@
 include dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'model' . DIRECTORY_SEPARATOR . 'contact.user.model.php';
 
 // CONTROLLER CODE
+
+// CLEANING ENTRIES
 $nameEntry = isset($_POST['sign_in_nickname']) ? entryCleaning($_POST['name']) : "";
 $mailEntry = isset($_POST['sign_in_nickname']) ? entryCleaning($_POST['mail']) : "";
 $messageEntry = isset($_POST['sign_in_nickname']) ? entryCleaning($_POST['message']) : "";
 
 $warning = "";
 
+// LIST OF THE SHOPS
 $shops = shopInfoSelect($db);
 
+// SENDING MAIL
 if (isset($_POST['sendForm'])){
     if (!empty($_POST['name']) && !empty($_POST['mail']) && !empty($_POST['message'])) {
         $to = "audrey@calzi.fr";
