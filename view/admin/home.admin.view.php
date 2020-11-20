@@ -1,11 +1,15 @@
+<!-- HOME PAGE -->
 <div class="container mt-5">
+    <!-- TITLE -->
     <section class="jumbotron text-center">
         <div class="container">
             <h1 class="jumbotron-heading">ADMIN PAGE</h1>
             <p class="lead text-muted">On this page you can view the different categories of editable things, products, stores, categories and images.</p>
         </div>
     </section>
+    <!-- DROPDOWN VIEW FOR CRUD -->
     <div class="accordion" id="accordionExample">
+        <!-- PRODUCT -->
         <div class="card">
             <div class="card-header" id="headingOne">
                 <h2 class="mb-0">
@@ -97,6 +101,7 @@
                 </div>
             </div>
         </div>
+        <!-- SHOPS -->
         <div class="card">
             <div class="card-header" id="headingTwo">
                 <h2 class="mb-0">
@@ -153,6 +158,7 @@
                 </div>
             </div>
         </div>
+        <!-- IMAGES -->
         <div class="card">
             <div class="card-header" id="headingThree">
                 <h2 class="mb-0">
@@ -207,6 +213,7 @@
                 </div>
             </div>
         </div>
+        <!-- CATEGORIES -->
         <div class="card mb-5">
             <div class="card-header" id="headingFour">
                 <h2 class="mb-0">
@@ -258,5 +265,6 @@
             </div>
         </div>
     </div>
+    <!-- GO BACK BUTTON -->
     <a href="?user=home"><button type="button" class="btn btn-light mt-5"> << Go back</button></a>
 </div>

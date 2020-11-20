@@ -1,27 +1,34 @@
+<!-- PRODUCT UPDATE PAGE -->
 <section class="container mt-5 pt-5 text-center">
+    <!-- FORM -->
     <form method="post" class="text-left">
         <div class="d-flex m-5">
             <div class="container">
+                <!-- ID INPUT -->
                 <div class="form-group">
                     <label class="text-uppercase">Id</label>
                     <input type="text" class="form-control" disabled value="<?=$product['id_product']?>">
                 </div>
+                <!-- NAME INPUT -->
                 <div class="form-group">
                     <label class="text-uppercase">name_product</label>
                     <input type="text" name="name" class="form-control" value="<?=$product['name_product']?>">
                 </div>
+                <!-- DESCRIPTION INPUT -->
                 <div class="form-group">
                     <label class="text-uppercase">description_product</label>
                     <textarea class="form-control" name="description" rows="6"><?=$product['description_product']?></textarea>
                 </div>
             </div>
             <div class="container">
+                <!-- PRICE INPUT -->
                 <div class="form-group">
                     <label class="text-uppercase">price_product</label>
                     <input type="text" name="price" class="form-control" pattern="\d+(\.\d{1,2})?" value="<?=$product['price_product']?>">
                     <small class="form-text text-muted">Format : 123.45</small>
                 </div>
                 <div class="row">
+                    <!-- DISCOUNT INPUT -->
                     <div class="col">
                         <label class="text-uppercase">Discount_product</label>
                         <select name="discount" class="form-control w-100">
@@ -40,16 +47,19 @@
                             <option value="80" <?php if ($product['discount_product'] == 80){echo "selected";}?>>80 %</option>
                         </select>
                     </div>
+                    <!-- DISCOUNT START DATE INPUT -->
                     <div class="col">
                         <label class="text-uppercase">Discount_start</label>
                         <input type="text" class="form-control" disabled placeholder="N O W">
                     </div>
+                    <!-- DISCOUNT END DATE INPUT -->
                     <div class="col">
                         <label class="text-uppercase">Discount_end</label>
                         <input type="text" name="end" class="form-control" placeholder="I F  N E E D E D" value="<?=date("j", abs(time() - strtotime($product['discount_end_date_product'])))?>">
                         <small class="form-text text-muted">in ... days</small>
                     </div>
                 </div>
+                <!-- PRODUCT PROMOTION INPUT -->
                 <div class="form-group">
                     <label class="text-uppercase">Promoted_product</label>
                     <select class="custom-select my-1 mr-sm-2" name="promoted">
@@ -57,6 +67,7 @@
                         <option value="1" <?php if ($product['promoted_product'] == 1){echo "selected";}?>>Yes</option>
                     </select>
                 </div>
+                <!-- STOCK STATUS INPUT -->
                 <div class="form-group">
                     <label class="text-uppercase">Instock_product</label>
                     <select class="custom-select my-1 mr-sm-2" name="stock">
@@ -64,6 +75,7 @@
                         <option value="0" <?php if ($product['instock_product'] == 0){echo "selected";}?>>No</option>
                     </select>
                 </div>
+                <!-- SUCCESS/FAILURE MESSAGE -->
                 <?php
                 if (isset($help)){
                     echo "<small class=\"form-text text-danger mt-4 ml-3\">".$help."</small>";
@@ -72,17 +84,21 @@
                     echo "<small class=\"form-text text-success mt-4 ml-3\">".$win."</small>";
                 }
                 ?>
+                <!-- SUBMIT BUTTON -->
                 <input type="submit" name="send" value="Submit" class="btn btn-primary mt-5 float-right">
             </div>
         </div>
     </form>
 </section>
+<!-- IMG AND CATEGORY FOR THE PRODUCT UPDATE -->
     <section class="container mt-5 pt-5 text-center">
+        <!-- FORM -->
         <form method="post" class="text-left">
             <div class="d-flex m-5">
                 <div class="container">
+                    <!-- CATEGORY -->
                     <div class="form-group">
-                        <label class="text-uppercase">img_product</label><br>
+                        <label class="text-uppercase">category_product</label><br>
                         <?php
                         if(!empty($product["name_category"])) {
                             $categoryName = explode("µµ", $product["name_category"]);
@@ -94,6 +110,7 @@
                             }
                         }
                         ?>
+                        <!-- ADD AN CATEGORY -->
                         <form class="form-group" method="post">
                             <div class="form-group">
                                 <select name="cat" class="form-control">
@@ -105,6 +122,7 @@
                                     ?>
                                 </select>
                             </div>
+                            <!-- SUCCESS/FAILURE MESSAGE -->
                             <?php
                             if (isset($helpCat)){
                                 echo "<small class=\"form-text text-danger mt-4 ml-3 mb-5\">".$helpCat."</small>";
@@ -113,10 +131,12 @@
                                 echo "<small class=\"form-text text-success mt-4 ml-3 mb-5\">".$winCat."</small>";
                             }
                             ?>
+                            <!-- SUBMIT BUTTON -->
                             <button type="submit" name="submitCat" class="btn btn-primary block">ADD</button>
                         </form>
                     </div>
                 </div>
+                <!-- IMG -->
                 <div class="container">
                     <div class="form-group">
                         <label class="text-uppercase">img_product</label><br>
@@ -132,6 +152,7 @@
                             }
                         }
                         ?>
+                        <!-- ADD AN IMG -->
                         <form class="form-group" method="post">
                             <div class="form-group">
                                 <select name="image" class="form-control">
@@ -143,6 +164,7 @@
                                     ?>
                                 </select>
                             </div>
+                            <!-- SUCCESS/FAILURE MESSAGE -->
                             <?php
                             if (isset($helpImg)){
                                 echo "<small class=\"form-text text-danger mt-4 ml-3 mb-5\">".$helpImg."</small>";
@@ -151,10 +173,12 @@
                                 echo "<small class=\"form-text text-success mt-4 ml-3 mb-5\">".$winImg."</small>";
                             }
                             ?>
+                            <!-- SUBMIT BUTTON -->
                             <button type="submit" name="submitImage" class="btn btn-primary block">ADD</button>
                         </form>
                     </div>
                 </div>
             </div>
+            <!-- GO BACK BUTTON -->
     <a href="?admin=home"><button type="button" class="btn btn-light mt-5"> << Go back</button></a>
 </section>

@@ -1,25 +1,32 @@
+<!-- PRODUCT INSERTION PAGE -->
 <section class="container mt-5 pt-5 text-center">
+    <!-- FORM -->
     <form method="post" class="text-left">
         <div class="d-flex m-5">
             <div class="container">
+                <!-- ID INPUT -->
                 <div class="form-group">
                     <label class="text-uppercase">Id</label>
                     <input type="text" class="form-control" disabled value="A U T O F I L L"">
                 </div>
+                <!-- NAME PRODUCT INPUT -->
                 <div class="form-group">
                     <label class="text-uppercase">name_product</label>
                     <input type="text" name="name" class="form-control">
                 </div>
+                <!-- DESCRIPTION PRODUCT INPUT -->
                 <div class="form-group">
                     <label class="text-uppercase">description_product</label>
                     <textarea class="form-control" name="description" rows="4"></textarea>
                 </div>
+                <!-- PRICE PRODUCT INPUT -->
                 <div class="form-group">
                     <label class="text-uppercase">price_product</label>
                     <input type="text" name="price" class="form-control" pattern="\d+(\.\d{1,2})?">
                     <small class="form-text text-muted">Format : 123.45</small>
                 </div>
                 <div class="row">
+                    <!-- DISCOUNT PRODUCT INPUT -->
                     <div class="col">
                         <label class="text-uppercase">Discount_product</label>
                         <select name="discount" class="form-control w-100">
@@ -38,19 +45,21 @@
                             <option value="80">80 %</option>
                         </select>
                     </div>
+                    <!-- DISCOUNT START DATE INPUT (DISABLED) -->
                     <div class="col">
                         <label class="text-uppercase">Discount_start</label>
                         <input type="text" class="form-control" disabled placeholder="N O W">
                     </div>
+                    <!-- DISCOUNT END DATE INPUT -->
                     <div class="col">
                         <label class="text-uppercase">Discount_end</label>
                         <input type="text" name="end" class="form-control" placeholder="I F  N E E D E D">
                         <small class="form-text text-muted">in ... days</small>
                     </div>
                 </div>
-
             </div>
             <div class="container">
+                <!-- PROMOTED PRODUCT INPUT -->
                 <div class="form-group">
                     <label class="text-uppercase">Promoted_product</label>
                     <select class="custom-select my-1 mr-sm-2" name="promoted">
@@ -58,6 +67,7 @@
                         <option value="1">Yes</option>
                     </select>
                 </div>
+                <!-- STOCK STATUS INPUT -->
                 <div class="form-group">
                     <label class="text-uppercase">Instock_product</label>
                     <select class="custom-select my-1 mr-sm-2" name="stock">
@@ -65,6 +75,7 @@
                         <option value="0">No</option>
                     </select>
                 </div>
+                <!-- FIRST CATEGORY PRODUCT INPUT -->
                 <div class="form-group">
                     <label class="text-uppercase">Main Category_product</label>
                     <select name="category" class="form-control w-100">
@@ -77,6 +88,7 @@
                     </select>
                     <small class="form-text text-muted">You'll be able to add more categories later</small>
                 </div>
+                <!-- FIRST IMG PRODUCT INPUT -->
                 <div class="form-group">
                     <label class="text-uppercase">Main image_product</label>
                     <select name="image" class="form-control w-100">
@@ -89,6 +101,7 @@
                     </select>
                     <small class="form-text text-muted">You'll be able to add more images later</small>
                 </div>
+                <!-- SUCCESS/FAILED MESSAGE -->
                 <?php
                 if (isset($help)){
                     echo "<small class=\"form-text text-danger mt-4 ml-3\">".$help."</small>";
@@ -97,10 +110,12 @@
                     echo "<small class=\"form-text text-success mt-4 ml-3\">".$win."</small>";
                 }
                 ?>
+                <!-- SUBMIT BUTTON -->
                 <input type="submit" name="insert" value="Submit" class="btn btn-primary mt-5 float-right">
             </div>
         </div>
     </form>
 
+    <!-- GO BACK BUTTON -->
     <a href="?admin=home"><button type="button" class="btn btn-light mt-5"> << Go back</button></a>
 </section>

@@ -1,6 +1,5 @@
-<?php
-
-?> <!doctype html>
+<!-- HEADER -->
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,200;0,300;1,200;1,300&display=swap" rel="stylesheet">
     <title>All-natural Artifacts</title></head>
 <body>
+<!-- NAVIGATION -->
 <header>
     <a href="./"><img id="logo1" src="img/logo/main-logo-small.png" alt="All-natural Artifacts"/></a>
     <nav>
