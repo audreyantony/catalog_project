@@ -1,4 +1,4 @@
-
+/*
 let modal = document.getElementById('myModal');
 
 let img = document.getElementById('myImg');
@@ -21,4 +21,4 @@ let span = document.getElementsByClassName("close")[0];
 
 span.onclick = function() {
     modal.style.display = "none";
-};
+};*/

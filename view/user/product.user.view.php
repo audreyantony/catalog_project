@@ -1,6 +1,7 @@
 <?php
 if (isset($item)) {
     ?>
+    <!-- PRODUCT PAGE -->
     <section id="catalog-detail">
         <div class="grid-container">
             <div class="title">
@@ -43,6 +44,7 @@ if (isset($item)) {
     <?php
 } else if (isset($error)) {
     ?>
+    <!-- 404 PRODUCT -->
     <div id="error">
         <img src="img/icon/404.png" alt="404">
         <p>Oops ! We can't find the page you're looking for</p>
@@ -53,6 +55,7 @@ if (isset($item)) {
     <?php
 }
 ?>
+<!-- GALLERY LIGHT BOX -->
 <div id="floatingGallery">
     <img id="leftArrow" src="img/icon/back.png">
     <button id="close">X</button>
@@ -60,4 +63,5 @@ if (isset($item)) {
     <img id="rightArrow" src="img/icon/next.png">
 </div>
 
+<!-- JS -->
 <script src="js/lightbox.js" type="text/javascript"></script>

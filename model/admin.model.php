@@ -1,56 +1,67 @@
 <?php
 
+// ENTRY CLEANING
 function clean($item){
     return htmlspecialchars(strip_tags(trim($item)));
 }
 
+// SELECT ALL SHOPS
 function selectAllShops($db){
     $query = "SELECT * FROM shop ORDER BY id_shop ASC";
     return mysqli_query($db,$query);
 }
 
+// SELECT THE SHOP
 function selectTheShop($id, $db){
     $query = "SELECT * FROM shop WHERE id_shop = ".$id.";";
     $result = mysqli_query($db,$query);
     return mysqli_fetch_assoc($result);
 }
 
+// SHOP UPDATE
 function updateTheShop($name, $lat, $long, $street, $postcode, $city, $descr, $id, $db){
     $query = 'UPDATE shop SET name_shop = "'.$name.'", lat_shop = "'.$lat.'", long_shop = "'.$long.'", street_shop = "'.$street.'", post_code_shop = "'.$postcode.'", city_shop = "'.$city.'", description_shop = "'.$descr.'" WHERE id_shop = '.$id.';';
     return mysqli_query($db, $query);
 }
 
+// SHOP INSERTION
 function insertTheShop($name, $lat, $long, $street, $postcode, $city, $descr, $db){
     $query = 'INSERT INTO shop (name_shop, lat_shop, long_shop, street_shop, post_code_shop, city_shop, description_shop) VALUES ("'.$name.'", "'.$lat.'", "'.$long.'", "'.$street.'", "'.$postcode.'", "'.$city.'", "'.$descr.'");';
     return mysqli_query($db, $query);
 }
 
+// SHOP DELETION
 function  deleteTheShop($id, $db){
     $query = "DELETE FROM shop WHERE id_shop = ".$id.";";
     return mysqli_query($db,$query);
 }
 
+// SELECT ALL CATEGORIES
 function selectAllCategories($db){
     $query = "SELECT * FROM category ORDER BY id_category ASC";
     return mysqli_query($db,$query);
 }
 
+// SELECT THE CATEGORY
 function selectTheCategory($id,$db){
     $query = "SELECT * FROM category WHERE id_category = ".$id.";";
     $result = mysqli_query($db,$query);
     return mysqli_fetch_assoc($result);
 }
 
+// CATEGORY UPDATE
 function updateTheCategory($name, $id, $db){
     $query = 'UPDATE category SET name_category = "'.$name.'" WHERE id_category = '.$id.';';
     return mysqli_query($db, $query);
 }
 
+// CATEGORY INSERTION
 function insertTheCategory($name, $db){
     $query = 'INSERT INTO category (name_category) VALUES ("'.$name.'");';
     return mysqli_query($db, $query);
 }
 
+// CATEGORY DELETION
 function deleteTheCategory($id, $db){
     mysqli_begin_transaction($db);
     $query = mysqli_query($db, "DELETE FROM product_has_category WHERE category_id_category = ".$id.";");
@@ -64,32 +75,38 @@ function deleteTheCategory($id, $db){
     }
 }
 
+// SELECT ALL IMG
 function selectAllImages($db){
     $query = "SELECT * FROM img ORDER BY id_img ASC";
     return mysqli_query($db,$query);
 }
 
+// SELECT THE IMG
 function selectTheImage($id,$db){
     $query = "SELECT * FROM img WHERE id_img = ".$id.";";
     $result = mysqli_query($db,$query);
     return mysqli_fetch_assoc($result);
 }
 
+// IMG NAME UPDATE
 function updateTheImage($name, $alt, $id, $db){
     $query = 'UPDATE img SET name_img = "products/'.$name.'", alt_img = "'.$alt.'" WHERE id_img = '.$id.';';
     return mysqli_query($db, $query);
 }
 
+// IMG ALT UPDATE
 function updateTheImageAlt($alt, $id, $db){
     $query = 'UPDATE img SET alt_img = "'.$alt.'" WHERE id_img = '.$id.';';
     return mysqli_query($db, $query);
 }
 
+// IMG INSERTION
 function insertTheImage($name, $alt, $db){
     $query = 'INSERT INTO img (name_img, alt_img) VALUES ("products/'.$name.'", "'.$alt.'");';
     return mysqli_query($db, $query);
 }
 
+// IMG DELETION
 function deleteTheImage($id, $db){
     mysqli_begin_transaction($db);
     $query = mysqli_query($db, "DELETE FROM product_has_img WHERE img_id_product_has_img = ".$id.";");
@@ -103,6 +120,7 @@ function deleteTheImage($id, $db){
     }
 }
 
+// SELECT ALL PRODUCTS BUT SMALL VERSION
 function selectAllProductsSmall($db) {
     $query = "
     SELECT DISTINCT p.id_product AS id_product,
@@ -122,6 +140,7 @@ function selectAllProductsSmall($db) {
     return mysqli_query($db,$query);
 }
 
+// SELECT ALL PRODUCTS FULL VERSION
 function selectTheProduct($id, $db)
 {
     $query = "SELECT DISTINCT p.id_product AS id_product,
@@ -144,6 +163,7 @@ function selectTheProduct($id, $db)
     return mysqli_fetch_assoc($result);
 }
 
+// PRODUCT DELETION
 function deleteTheProduct($id, $db){
     mysqli_begin_transaction($db);
     $query = mysqli_query($db, "DELETE FROM product_has_img WHERE product_id_product_has_img = ". $id .";");
@@ -158,6 +178,7 @@ function deleteTheProduct($id, $db){
     }
 }
 
+// PRODUCT INSERTION
 function insertTheProduct($name, $descr, $price, $discount, $end, $promoted, $stock, $cat, $img, $db){
     if ($end ===''){
         $end = 0;
@@ -181,26 +202,31 @@ function insertTheProduct($name, $descr, $price, $discount, $end, $promoted, $st
     }
 }
 
+// DELETION OF A PRODUCT CATEGORY
 function deleteProductAndCategory($productId, $categoryId, $db){
     $query = "DELETE FROM product_has_category WHERE product_has_category.product_id_product = ".$productId." AND product_has_category.category_id_category = ".$categoryId.";";
     return mysqli_query($db,$query);
 }
 
+// DELETION OF A PRODUCT IMG
 function deleteProductAndImage($productId, $imgId, $db){
     $query = "DELETE FROM product_has_img WHERE product_has_img.product_id_product_has_img = ".$productId." AND product_has_img.img_id_product_has_img = ".$imgId.";";
     return mysqli_query($db,$query);
 }
 
+// INSERTION OF A PRODUCT CATEGORY
 function AddProductCategory($catId, $prodId, $db){
     $query = "INSERT INTO product_has_category (product_id_product, category_id_category) VALUES (".$prodId.", ".$catId.");";
     return mysqli_query($db,$query);
 }
 
+// INSERTION OF A PRODUCT IMG
 function AddProductImage($imgId, $prodId, $db){
     $query = "INSERT INTO product_has_img (product_id_product_has_img, img_id_product_has_img) VALUES (".$prodId.", ".$imgId.");";
     return mysqli_query($db,$query);
 }
 
+// PRODUCT UPDATE
 function updateTheProduct($name, $description, $price, $discount, $end, $promoted, $stock, $id, $db){
     if ($end === ''){
         $end = 0;

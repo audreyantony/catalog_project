@@ -1,4 +1,6 @@
+<!-- CONTACT PAGE -->
 <section id="contact">
+    <!-- CONTACT FORM -->
     <div class="img"></div>
     <div class="inputs">
         <h3>Contact</h3>
@@ -13,10 +15,10 @@
             <textarea class="form3" name="message" placeholder="Your comment or message" required><?=$messageEntry?></textarea>
             <input class="form4" name="sendForm" type="submit" value="Send ►">
         </form>
-        <h4></h4>
     </div>
 </section>
 
+<!-- SOCIAL MEDIA BUTTONS -->
 <section id="social-media">
     <a href="https://fr-fr.facebook.com/" target="_blank"><img src="img/social-media/facebook.png" alt="facebook"></a>
     <a href="https://www.instagram.com/" target="_blank"><img src="img/social-media/instagram.png" alt="instagram"></a>
@@ -24,6 +26,7 @@
     <a href="https://www.youtube.com/" target="_blank"><img src="img/social-media/youtube.png" alt="youtube"></a>
 </section>
 
+<!-- LEAFLET MAP AND SHOP LIST -->
 <section id="map">
     <div class="list-shop">
         <h4>Shops</h4>
@@ -42,5 +45,6 @@
     </div>
 </section>
 
+<!-- JS -->
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 <script type="text/javascript" src="js/leaflet.js"></script>

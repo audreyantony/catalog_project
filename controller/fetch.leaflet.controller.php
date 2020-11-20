@@ -5,7 +5,7 @@ include dirname(__DIR__) . DIRECTORY_SEPARATOR . 'bin' . DIRECTORY_SEPARATOR . '
 include dirname(__DIR__) . DIRECTORY_SEPARATOR . 'model' . DIRECTORY_SEPARATOR . 'DBconnect.model.php';
 include dirname(__DIR__) . DIRECTORY_SEPARATOR . 'model' . DIRECTORY_SEPARATOR . 'contact.user.model.php';
 
-$db =DBconnect();
+$db = DBconnect();
 
 $shops = shopsLatLongSelect($db);
 

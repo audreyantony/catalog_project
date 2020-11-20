@@ -1,5 +1,6 @@
 <?php
 
+// SELECT THE PRODUCT
 function selectTheProduct($id, $db){
     $query = "SELECT DISTINCT p.id_product AS id_product,
                     p.name_product, p.description_product,

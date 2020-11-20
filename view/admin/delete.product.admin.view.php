@@ -1,5 +1,8 @@
+<!-- PRODUCT DELETION PAGE -->
 <section class="container col-md-4 ml-auto mr-auto m-5 text-center">
+    <!-- TITLE -->
     <h1 class="text-danger m-3">THIS IS THE DELETE PAGE</h1>
+    <!-- RECAP -->
     <div class="card text-right" style="width: 36rem;">
         <div class="card-body">
             <h5 class="card-title text-left"><?=$product['name_product']?></h5>
@@ -42,5 +45,6 @@
             <a href="?admin=crud&deleteproduct=<?=$product['id_product']?>&confirm=yes"><button type="button" class="btn btn-danger ml-3 mb-2">DELETE</button></a>
         </div>
     </div>
+    <!-- GO BACK BUTTON -->
     <a href="?admin=home"><button type="button" class="btn btn-light mt-5"> << Go back</button></a>
 </section>

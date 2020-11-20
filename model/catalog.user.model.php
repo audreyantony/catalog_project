@@ -1,4 +1,5 @@
 <?php
+// ALL PRODUCTS
 function selectTotalProducts($db){
     $query = "SELECT DISTINCT *
     FROM product
@@ -6,6 +7,7 @@ function selectTotalProducts($db){
     return mysqli_query($db, $query);
 }
 
+// PRODUCTS TO SHOW NORMALLY
 function selectAllProducts($productByPage, $currentPage, $db){
     $query = "
     SELECT DISTINCT p.id_product AS id_product, p.name_product, 
@@ -27,23 +29,27 @@ function selectAllProducts($productByPage, $currentPage, $db){
     return mysqli_query($db, $query);
 }
 
+// IMG(S)
 function selectImgProducts($id, $db){
     $query = "SELECT id_product, name_img, alt_img FROM product JOIN product_has_img ON id_product = product_id_product_has_img JOIN img ON img_id_product_has_img = id_img WHERE id_product = ".$id." LIMIT 1;";
     $result = mysqli_query($db, $query);
     return mysqli_fetch_assoc($result);
 }
 
+// CATEGORY(IES)
 function selectCategoryProducts($id, $db){
     $query = "SELECT id_product, name_category FROM product JOIN product_has_category ON id_product = product_id_product JOIN category ON category_id_category = id_category WHERE id_product = ".$id.";";
     return mysqli_query($db, $query);
 }
 
+// CATEGORIES FOR SEARCH BAR
 function selectAllCategory($db){
     $query = "SELECT * FROM category;";
     return mysqli_query($db, $query);
 }
 
-function pagination($productNumber, $currentPage, $productByPage = 6, $text){
+// PAGING
+function pagination($productNumber, $currentPage, $text, $productByPage = 6){
 
     $page = ceil($productNumber / $productByPage);
     $pagination = "";
@@ -74,12 +80,14 @@ function pagination($productNumber, $currentPage, $productByPage = 6, $text){
     return $pagination;
 }
 
+// MAX PRICE FOR SEARCH BAR
 function selectMaxPrice($db){
     $query = "SELECT price_product FROM product ORDER BY price_product DESC LIMIT 1 ;";
     $result = mysqli_query($db, $query);
     return mysqli_fetch_assoc($result);
 }
 
+// PRODUCTS TO SHOW WHEN SEARCH IS PRESSED
 function selectSomeProducts($minPrice, $maxPrice, $catArray, $productByPage, $currentPage, $db){
     $query = "
     SELECT DISTINCT p.id_product AS id_product, p.name_product, 
@@ -114,6 +122,7 @@ function selectSomeProducts($minPrice, $maxPrice, $catArray, $productByPage, $cu
     return mysqli_query($db, $query);
 }
 
+// MAX PRODUCTS FOR SEARCHING PROCESS
 function selectTotalSomeProducts($minPrice, $maxPrice, $catArray, $db){
     $query = "SELECT DISTINCT *
     FROM product

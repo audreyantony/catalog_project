@@ -1604,8 +1604,8 @@ footer div p a:hover {
 
 #error img {
     margin-top: 50px;
-    width: 100%;
-    max-width: 400px;
+    width: auto;
+    max-height: 300px;
 }
 
 #error p {
