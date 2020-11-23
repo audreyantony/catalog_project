@@ -1,10 +1,12 @@
 <?php
 
+// REDIRECT IF NOT CONNECTED
 if(!isset($_SESSION['id_session'])|| $_SESSION['id_session']!==session_id()){
     header('Location: ?admin=connect');
     exit();
 }
 
+// SWITCH ADMIN
 if (isset($_GET['insertshop'])){
 
 include dirname(__DIR__) . DIRECTORY_SEPARATOR . 'admin'. DIRECTORY_SEPARATOR . 'shop' . DIRECTORY_SEPARATOR . 'insert.shop.admin.controller.php';
@@ -69,6 +71,7 @@ include dirname(__DIR__) . DIRECTORY_SEPARATOR . 'admin'. DIRECTORY_SEPARATOR . 
 
     include dirname(__DIR__) . DIRECTORY_SEPARATOR . 'admin'. DIRECTORY_SEPARATOR . 'product' . DIRECTORY_SEPARATOR . 'update.product.admin.controller.php';
 
+    // DEFAULT -> ADMIN HOME PAGE
 } else {
 
     header('Location: ?admin=home');
