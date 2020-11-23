@@ -1156,7 +1156,7 @@ footer div p a:hover {
 /* CATALOG PAGE */
 
 #containercatalog {
-    width: 95%;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -1476,6 +1476,83 @@ footer div p a:hover {
     background-color: #E26d5c;
     color: #472d30;
 }
+
+@media screen and (min-width: 1110px) and (max-width: 1500px){
+    #containercatalog {
+        width: 120%;
+        margin-top: -65px;
+        transform: scale(0.8);
+        margin-left: -10%;
+    }
+    #containercatalog #find {
+        position: absolute;
+        top: 130px;
+        left: 1%;
+        transform: scale(0.9);
+    }
+    #containercatalog #catalog {
+        width: 80%;
+        position: absolute;
+        top: 120px;
+        right: 1%;
+    }
+    #catalog .products {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 840px) and (max-width: 1110px){
+    #containercatalog {
+        width: 130%;
+        margin-top: -65px;
+        transform: scale(0.7);
+        margin-left: -16%;
+    }
+    #containercatalog #find {
+        position: absolute;
+        top: 130px;
+        left: 1%;
+        transform: scale(0.9);
+    }
+    #containercatalog #catalog {
+        width: 95%;
+        position: absolute;
+        top: 10px;
+        right: -15%;
+        transform: scale(0.8)
+    }
+    #catalog .products {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 40px) and (max-width: 840px){
+    #containercatalog {
+        width: 130%;
+        margin-top: -65px;
+        transform: scale(0.7);
+        margin-left: -16%;
+    }
+    #containercatalog #find {
+        position: absolute;
+        top: 130px;
+        left: -6%;
+        transform: scale(0.9);
+    }
+    #containercatalog #catalog {
+        width: 90%;
+        position: absolute;
+        top: 10px;
+        right: -20%;
+        transform: scale(0.8)
+    }
+    #catalog .products {
+        width: 100%;
+        transform: scale(0.8)
+    }
+}
+
+/* PRODUCT DETAILS */
 
 #catalog-detail {
     margin: 80px auto;
