@@ -44,7 +44,7 @@
                     }
                     echo '<img class="img" src="img/' . $picture['name_img'] . '" alt="' . $picture['alt_img'] . '">';
                     if ($item['discount_product'] > 0) {
-                        echo '<h5 class="discount">| ' . ($item['price_product'] - ($item['price_product'] * ($item['discount_product'] / 100))) . ' € |</h5>';
+                        echo "<h5 class='discount'>| <script type='text/javascript'>document.write(discount(".$item['price_product'].",".$item['discount_product']."))</script> € |</h5>";
                     } else {
                         echo "<h5>" . $item['price_product'] . " € </h5>";
                     }
