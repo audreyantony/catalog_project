@@ -42,7 +42,7 @@
                         echo "<div class='item'>";
                         echo "<h2>" . $item['name_product'] . "</h2>";
                     }
-                    echo '<img class="img" src="img/' . $picture['name_img'] . '" alt="' . $picture['alt_img'] . '">';
+                    echo '<img class="img" src="img/upload/' . $picture['name_img'] . '" alt="' . $picture['alt_img'] . '">';
                     if ($item['discount_product'] > 0) {
                         echo "<h5 class='discount'>| <script type='text/javascript'>document.write(discount(".$item['price_product'].",".$item['discount_product']."))</script> € |</h5>";
                     } else {

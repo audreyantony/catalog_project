@@ -6,18 +6,18 @@ include dirname(dirname(dirname(__DIR__))) . DIRECTORY_SEPARATOR . 'model' . DIR
 // CONTROLLER CODE
 if (isset($_POST['insert'])) {
 
-    if (!empty($_POST['name']) && !empty($_POST['alt'])) {
+    if (!empty($_FILES['file']) && !empty($_POST['alt'])) {
 
-        $insert = insertTheImage(clean($_POST['name']), clean($_POST['alt']), $db);
+       $insert = insertTheImage($_FILES['file'], clean($_POST['alt']), $db,IMG_FORMAT,IMG_MAX_SIZE,IMG_UPLOAD,IMG_WIDTH,IMG_HEIGHT, QUALITY_JPG);
 
-        if ($insert) {
-            $win = "We have a new image ! (It'll be on the home page)";
-        } else {
-            $help = "Something went wrong";
-        }
-    } else {
-        $help = "All fields needs to by filled";
-    }
+       if ($insert) {
+           $win = "We have a new image ! (It'll be on the home page)";
+       } else {
+           $help = "Something went wrong";
+       }
+   } else {
+       $help = "All fields needs to by filled";
+   }
 }
 
 // CALLING VIEW
