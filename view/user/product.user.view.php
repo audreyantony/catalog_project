@@ -14,7 +14,7 @@ if (isset($item)) {
                 $imgAlt = explode("µµ", $item["alt_img"]);
                 $i = 0;
                 foreach ($imgName AS $img) {
-                echo "<img class=\"products clickablePicture img\"class=\"img\" src=\"img/" . $img . "\" alt=\"" . $imgAlt[$i] . "\" data-group=\"products\"> ";
+                echo "<img class=\"products clickablePicture img\"class=\"img\" src=\"img/upload/" . $img . "\" alt=\"" . $imgAlt[$i] . "\" data-group=\"products\"> ";
                 $i++;
                 }
                 }?>

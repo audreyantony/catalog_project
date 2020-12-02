@@ -27,7 +27,7 @@
             $days = dateDiff($now, $end);?>
             <div class="bta">
                 <h3><?=$item['discount']?> % <span>on</span></h3>
-                <img src="img/<?=isset($imgName[1]) ? $imgName[1] : $imgName[0]?>" alt="<?=isset($imgAlt[1]) ? $imgAlt[1] : $imgAlt[0]?>">
+                <img src="img/upload/<?=isset($imgName[1]) ? $imgName[1] : $imgName[0]?>" alt="<?=isset($imgAlt[1]) ? $imgAlt[1] : $imgAlt[0]?>">
                 <h4><?=$title[0]?></h4>
                 <h5>Now at <br> <span>| <script type="text/javascript">document.write(discount(<?=$item['price_product']?>,<?=$item['discount']?>))</script> € |</span><br>In place of <?=$item['price_product']?> €</h5>
                 <a href="?product=<?=$item['id_product']?>"><button class="asb">Read more</button></a>
@@ -48,7 +48,7 @@
             ?>
             <div class="bta">
                 <h3>Today's Pick :</h3>
-                <img src="img/<?=isset($imgName[1]) ? $imgName[1] : $imgName[0]?>" alt="<?=isset($imgAlt[1]) ? $imgAlt[1] : $imgAlt[0]?>">
+                <img src="img/upload/<?=isset($imgName[1]) ? $imgName[1] : $imgName[0]?>" alt="<?=isset($imgAlt[1]) ? $imgAlt[1] : $imgAlt[0]?>">
                 <h4><?=$title[0]?></h4>
                 <p><?=$item['descr']?> ...</p>
                 <a href="?product=<?=$item['id_product']?>"><button class="asb">Read more</button></a>

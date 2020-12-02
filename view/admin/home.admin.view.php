@@ -78,7 +78,7 @@
                                                 $imgAlt = explode("µµ", $product["alt_img"]);
                                                 $i = 0;
                                                 foreach ($imgName AS $img) {
-                                                    echo "<img style=\"width: 135px;\" class=\"img bg-secondary border border-secondary\" src=\"img/" . $img . "\" alt=\"" . $imgAlt[$i] . "\"> ";
+                                                    echo "<img style=\"width: 135px;\" class=\"img bg-secondary border border-secondary\" src=\"img/upload/" . $img . "\" alt=\"" . $imgAlt[$i] . "\"> ";
                                                     $i++;
                                                 }
                                             }
@@ -88,7 +88,7 @@
                                     }
                                     ?>
                                     <tr>
-                                        <td colspan="5" class="pt-3 pr-5 text-right">Add a shop :</td>
+                                        <td colspan="5" class="pt-3 pr-5 text-right">Add a product :</td>
                                         <td colspan="1">
                                             <a href="?admin=crud&insertproduct"><button type="button" class="btn btn-success ml-3 mb-2">ADD</button></a>
                                         </td>
@@ -188,7 +188,7 @@
                                         ?>
                                         <tr>
                                             <th scope="row"><?=$image['id_img']?></th>
-                                            <td style="width:130px;"><img class="bg-dark" width="130px" src="img/<?=$image['name_img']?>" alt="<?=$image['alt_img']?>"></td>
+                                            <td style="width:130px;"><img class="bg-dark" width="130px" src="img/upload/<?=$image['name_img']?>" alt="<?=$image['alt_img']?>"></td>
                                             <td><?=$image['name_img']?></td>
                                             <td><?=$image['alt_img']?></td>
                                             <td>
@@ -200,7 +200,7 @@
                                     }
                                     ?>
                                     <tr>
-                                        <td colspan="4" class="pt-3 pr-5 text-right">Add a shop :</td>
+                                        <td colspan="4" class="pt-3 pr-5 text-right">Add an image :</td>
                                         <td colspan="1">
                                             <a href="?admin=crud&insertimage"><button type="button" class="btn btn-success ml-3 mb-2">ADD</button></a>
                                         </td>
@@ -251,7 +251,7 @@
                                     }
                                     ?>
                                     <tr>
-                                        <td colspan="2" class="pt-3 pr-5 text-right">Add a shop :</td>
+                                        <td colspan="2" class="pt-3 pr-5 text-right">Add a category :</td>
                                         <td colspan="1">
                                             <a href="?admin=crud&insertcategory"><button type="button" class="btn btn-success ml-3 mb-2">ADD</button></a>
                                         </td>

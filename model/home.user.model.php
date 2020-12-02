@@ -19,7 +19,7 @@ FROM
 JOIN product_has_img ON id_product = product_id_product_has_img
 JOIN img ON img_id_product_has_img = id_img
 WHERE
-    discount_product > 0
+    discount_product > 0 AND discount_start_date_product < NOW() AND discount_end_date_product > NOW()
 GROUP BY
     id_product
 LIMIT 3";

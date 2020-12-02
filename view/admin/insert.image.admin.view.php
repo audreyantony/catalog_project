@@ -1,7 +1,7 @@
 <!-- IMAGE INSERTION PAGE -->
 <section class="container mt-5 pt-5 text-center">
     <!-- FORM -->
-    <form method="post" class="text-left">
+    <form method="post" enctype="multipart/form-data" class="text-left">
         <div class="d-flex m-5">
             <div class="container">
                 <!-- ID INPUT -->
@@ -12,7 +12,7 @@
                 <!-- NAME IMG INPUT -->
                 <div class="form-group">
                     <label class="text-uppercase">name_img</label>
-                    <input type="file" name="name" class="form-control">
+                    <input type="file" name="file" class="form-control">
                 </div>
             </div>
             <div class="container">
@@ -31,7 +31,7 @@
                 }
                 ?>
                 <!-- SUBMIT BUTTON -->
-                <input type="submit" name="insert" value="Submit" class="btn btn-primary mt-5 float-right">
+                <input type="submit" name="insert" value="insert" class="btn btn-primary mt-5 float-right">
             </div>
         </div>
     </form>
