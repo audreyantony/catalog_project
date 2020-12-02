@@ -147,7 +147,7 @@
                             $imgId = explode("µµ", $product["id_img"]);
                             $i = 0;
                             foreach ($imgName AS $img) {
-                                echo "<p class='btn btn-light'><img style=\"width: 80px;\" class=\"img bg-secondary mb-2 border border-secondary\" src=\"img/" . $img . "\" alt=\"" . $imgAlt[$i] . "\"><a href='?admin=crud&updateproduct=".$product['id_product']."&imagetodelete=".$imgId[$i]."'><button type='button' class='btn btn-outline-danger m-1'>&#x2716</button></a></p> ";
+                                echo "<p class='btn btn-light'><img style=\"width: 80px;\" class=\"img bg-secondary mb-2 border border-secondary\" src=\"img/upload/" . $img . "\" alt=\"" . $imgAlt[$i] . "\"><a href='?admin=crud&updateproduct=".$product['id_product']."&imagetodelete=".$imgId[$i]."'><button type='button' class='btn btn-outline-danger m-1'>&#x2716</button></a></p> ";
                                 $i++;
                             }
                         }
